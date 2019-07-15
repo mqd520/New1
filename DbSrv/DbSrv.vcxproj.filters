@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="99 Other">
+      <UniqueIdentifier>{835ef603-f925-4d5e-8bfa-1c53ee4acd13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00 Def">
+      <UniqueIdentifier>{317e94cb-67ff-4937-ae78-df0ac7fdf8fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02 Db Service">
+      <UniqueIdentifier>{6718d0bd-cce4-4dfa-981a-6fb4f5453d41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01 Log">
+      <UniqueIdentifier>{896fec5f-d2d9-40a2-879f-7e926849705a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02 Db Service\00 Player">
+      <UniqueIdentifier>{12eafbe9-eee4-4fa2-a3e2-2fa1a669a89e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>99 Other</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>99 Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\db\Def.h">
+      <Filter>00 Def</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\db\DbParameter.h">
+      <Filter>02 Db Service</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\db\DbService.h">
+      <Filter>02 Db Service</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\db\PlayerLoginSrv.h">
+      <Filter>02 Db Service\00 Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\db\Log.h">
+      <Filter>01 Log</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\db\DbServiceApp.h" />
+    <ClInclude Include="Include\db\DbOutputParameter.h">
+      <Filter>00 Def</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\db\DbResult.h">
+      <Filter>00 Def</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>99 Other</Filter>
+    </ClCompile>
+    <ClCompile Include="DbParameter.cpp">
+      <Filter>02 Db Service</Filter>
+    </ClCompile>
+    <ClCompile Include="DbService.cpp">
+      <Filter>02 Db Service</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerLoginSrv.cpp">
+      <Filter>02 Db Service\00 Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>01 Log</Filter>
+    </ClCompile>
+    <ClCompile Include="DbServiceApp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt">
+      <Filter>99 Other</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

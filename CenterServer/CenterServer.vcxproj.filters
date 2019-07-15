@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="00 Def">
+      <UniqueIdentifier>{95efa0fb-5f0d-4bfd-855f-3535680eccc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01 Log">
+      <UniqueIdentifier>{b31db2fd-8869-47eb-956d-20d0d0459928}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02 Config">
+      <UniqueIdentifier>{ad792d19-201a-4bb9-9500-81250f0eb20c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03 Service">
+      <UniqueIdentifier>{3a451994-1d78-4f32-932f-af649bd44a5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03 Service\01 Tcp Listen Service">
+      <UniqueIdentifier>{b4c725d9-0e5e-49f6-b6ed-37568fdfc528}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03 Service\01 Tcp Listen Service\01 Data Service">
+      <UniqueIdentifier>{3e2f4306-b66c-4639-b9a6-d84a3772c4b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03 Service\01 Tcp Listen Service\02 SendCard Service">
+      <UniqueIdentifier>{c5769cc9-3eb3-418e-b27a-45c217605778}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03 Service\01 Tcp Listen Service\03 Table Service">
+      <UniqueIdentifier>{b6d0d19c-7cb8-4c28-8fda-de7300a762db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03 Service\01 Tcp Listen Service\04 Plaza Service">
+      <UniqueIdentifier>{e894b283-b7b9-4db7-a8f1-07145fdcd4d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03 Service\01 Tcp Listen Service\05 Node Service">
+      <UniqueIdentifier>{bcc4f3a7-43e4-4c2c-8a29-84588e496517}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03 Service\01 Tcp Listen Service\06 Http Service">
+      <UniqueIdentifier>{3022de9c-c766-4336-b19b-b19836b99aaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03 Service\00 Common">
+      <UniqueIdentifier>{1bd248a8-e27f-4277-a16c-d1be238430be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02 Config\00 Section">
+      <UniqueIdentifier>{333e8383-3ee5-44d9-b13b-7e5a28fef6fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99 Other">
+      <UniqueIdentifier>{58b6e8da-a9e2-4099-9244-bd179cc386ef}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>99 Other</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>99 Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>01 Log</Filter>
+    </ClInclude>
+    <ClInclude Include="InitService.h" />
+    <ClInclude Include="CenterService.h">
+      <Filter>03 Service</Filter>
+    </ClInclude>
+    <ClInclude Include="PlazaService.h">
+      <Filter>03 Service\01 Tcp Listen Service\04 Plaza Service</Filter>
+    </ClInclude>
+    <ClInclude Include="Def.h">
+      <Filter>00 Def</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerListenMgr.h">
+      <Filter>03 Service\00 Common</Filter>
+    </ClInclude>
+    <ClInclude Include="CenterCommonService.h">
+      <Filter>03 Service\01 Tcp Listen Service</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>02 Config</Filter>
+    </ClInclude>
+    <ClInclude Include="PlazaSection.h">
+      <Filter>02 Config\00 Section</Filter>
+    </ClInclude>
+    <ClInclude Include="DbSection.h">
+      <Filter>02 Config\00 Section</Filter>
+    </ClInclude>
+    <ClInclude Include="SendCardSection.h">
+      <Filter>02 Config\00 Section</Filter>
+    </ClInclude>
+    <ClInclude Include="TableSection.h">
+      <Filter>02 Config\00 Section</Filter>
+    </ClInclude>
+    <ClInclude Include="DbService.h">
+      <Filter>03 Service\01 Tcp Listen Service\01 Data Service</Filter>
+    </ClInclude>
+    <ClInclude Include="SendCardService.h">
+      <Filter>03 Service\01 Tcp Listen Service\02 SendCard Service</Filter>
+    </ClInclude>
+    <ClInclude Include="TableService.h">
+      <Filter>03 Service\01 Tcp Listen Service\03 Table Service</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeService.h">
+      <Filter>03 Service\01 Tcp Listen Service\05 Node Service</Filter>
+    </ClInclude>
+    <ClInclude Include="BAAdminWebSiteService.h">
+      <Filter>03 Service\01 Tcp Listen Service\06 Http Service</Filter>
+    </ClInclude>
+    <ClInclude Include="BAAdminWebSiteSection.h">
+      <Filter>02 Config\00 Section</Filter>
+    </ClInclude>
+    <ClInclude Include="DbServiceSection.h">
+      <Filter>02 Config\00 Section</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>99 Other</Filter>
+    </ClCompile>
+    <ClCompile Include="CenterServer.cpp" />
+    <ClCompile Include="Log.cpp">
+      <Filter>01 Log</Filter>
+    </ClCompile>
+    <ClCompile Include="InitService.cpp" />
+    <ClCompile Include="CenterService.cpp">
+      <Filter>03 Service</Filter>
+    </ClCompile>
+    <ClCompile Include="PlazaService.cpp">
+      <Filter>03 Service\01 Tcp Listen Service\04 Plaza Service</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerListenMgr.cpp">
+      <Filter>03 Service\00 Common</Filter>
+    </ClCompile>
+    <ClCompile Include="CenterCommonService.cpp">
+      <Filter>03 Service\01 Tcp Listen Service</Filter>
+    </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>02 Config</Filter>
+    </ClCompile>
+    <ClCompile Include="PlazaSection.cpp">
+      <Filter>02 Config\00 Section</Filter>
+    </ClCompile>
+    <ClCompile Include="DbSection.cpp">
+      <Filter>02 Config\00 Section</Filter>
+    </ClCompile>
+    <ClCompile Include="SendCardSection.cpp">
+      <Filter>02 Config\00 Section</Filter>
+    </ClCompile>
+    <ClCompile Include="TableSection.cpp">
+      <Filter>02 Config\00 Section</Filter>
+    </ClCompile>
+    <ClCompile Include="DbService.cpp">
+      <Filter>03 Service\01 Tcp Listen Service\01 Data Service</Filter>
+    </ClCompile>
+    <ClCompile Include="SendCardService.cpp">
+      <Filter>03 Service\01 Tcp Listen Service\02 SendCard Service</Filter>
+    </ClCompile>
+    <ClCompile Include="TableService.cpp">
+      <Filter>03 Service\01 Tcp Listen Service\03 Table Service</Filter>
+    </ClCompile>
+    <ClCompile Include="NodeService.cpp">
+      <Filter>03 Service\01 Tcp Listen Service\05 Node Service</Filter>
+    </ClCompile>
+    <ClCompile Include="BAAdminWebSiteService.cpp">
+      <Filter>03 Service\01 Tcp Listen Service\06 Http Service</Filter>
+    </ClCompile>
+    <ClCompile Include="BAAdminWebSiteSection.cpp">
+      <Filter>02 Config\00 Section</Filter>
+    </ClCompile>
+    <ClCompile Include="DbServiceSection.cpp">
+      <Filter>02 Config\00 Section</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt">
+      <Filter>99 Other</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

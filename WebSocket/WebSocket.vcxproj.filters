@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="99 Other">
+      <UniqueIdentifier>{f7cbc39a-6289-4614-8475-d504765c62cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01 Ws">
+      <UniqueIdentifier>{581f4d65-bcf3-4fc3-906a-36b52a1c92fd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>99 Other</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>99 Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\ws\WSProtocolHandle.h">
+      <Filter>01 Ws</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\ws\WSProtocolHandleMgr.h">
+      <Filter>01 Ws</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>99 Other</Filter>
+    </ClCompile>
+    <ClCompile Include="WSProtocolHandle.cpp">
+      <Filter>01 Ws</Filter>
+    </ClCompile>
+    <ClCompile Include="WSProtocolHandleMgr.cpp">
+      <Filter>01 Ws</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt">
+      <Filter>99 Other</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
