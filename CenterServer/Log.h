@@ -85,12 +85,7 @@ public:
 	static void Printf(ELogType type, string format, ...);
 };
 
-// type1:			ELogType
+// type:			ELogType
 // bOutput2Console:	whether output to console
 // format:			format
 #define WriteLog(type, bOutput2Console, format, ...)			if(bOutput2Console){Log::Printf((type), (format), __VA_ARGS__);} LogSrv::WriteLine(Log::ELogType_2_ELogSrvType(type), (format), __VA_ARGS__);
-
-// type1:			ETcpLogType
-// bOutput2Console:	whether output to console
-// format:			format
-//#define WriteLine_TcpLog(type, bOutput2Console, format, ...)			if(bOutput2Console){Log::Printf(Log::ETcpLogType_2_ELogType(type), (format), __VA_ARGS__);} LogSrv::WriteLine(Log::ETcpLogType_2_ELogSrvType(type), (format), __VA_ARGS__);
