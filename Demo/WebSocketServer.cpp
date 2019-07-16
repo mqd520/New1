@@ -2,12 +2,14 @@
 #include "WebSocketServer.h"
 
 #include "tc/TcpCommuMgr.h"
+#include "tc/Log.h"
 using namespace tc;
 
 #include "com/StringTool.h"
 using namespace com;
 
 #include "ws/WSProtocolHandle.h"
+#include "ws/WSException.h"
 using namespace ws;
 
 
@@ -45,30 +47,55 @@ void WebSocketServer::OnRecvPeerData(RecvPeerDataEvt* pEvt)
 		if (b)
 		{
 			int len = 0;
-			BYTE* pBuf1 = pWSHandle->ParsePacket(pEvt->GetRecvBuf(), pEvt->GetBufLen(), &len);
+			BYTE* pBuf1 = NULL;
+
+			try
+			{
+				pBuf1 = pWSHandle->ParsePacket(pEvt->GetRecvBuf(), pEvt->GetBufLen(), &len);
+			}
+			catch (WSException& e)
+			{
+				TcpLog::WriteLine(ETcpLogType::Error, true, "Websocket parse packet fail: %s, code: %d, peer: %s:%d",
+					e.GetErrorInfo().c_str(), e.GetCode(), pEvt->GetPeerIp().c_str(), pEvt->GetPeerPort());
+
+				CloseClient(pEvt->GetSendRecvSocketId());
+			}
+
 			if (pBuf1 && len > 0)
 			{
 				pEvt->ResetBuf(pBuf1, len);
+				__super::OnRecvPeerData(pEvt);
 			}
 
-
-			// custom
-			string str = "123456";
-			Send(pEvt->GetSendRecvSocketId(), (BYTE*)str.c_str(), str.size());
 		}
 		else
 		{
 			BYTE buf[1024] = { 0 };
-			int len = pWSHandle->HandShake(pEvt->GetRecvBuf(), pEvt->GetBufLen(), buf, 1024);
+			int len = 0;
+
+			try
+			{
+				len = pWSHandle->HandShake(pEvt->GetRecvBuf(), pEvt->GetBufLen(), buf, 1024);
+			}
+			catch (WSException& e)
+			{
+				TcpLog::WriteLine(ETcpLogType::Error, true, "Websocket handshake fail: %s, code: %d, peer: %s:%d",
+					e.GetErrorInfo().c_str(), e.GetCode(), pEvt->GetPeerIp().c_str(), pEvt->GetPeerPort());
+			}
+
 			if (len > 0)
 			{
 				Send(pEvt->GetSendRecvSocketId(), buf, len);
 				pWSHandle->HandShakeComplete();
+
+				TcpLog::WriteLine(ETcpLogType::Info, true, "Websocket handshake success: %s:%d",
+					pEvt->GetPeerIp().c_str(), pEvt->GetPeerPort());
 			}
 			else
 			{
 				CloseClient(pEvt->GetSendRecvSocketId());
 			}
+
 		}
 	}
 	else

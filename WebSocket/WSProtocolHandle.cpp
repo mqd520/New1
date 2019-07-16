@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Include//ws/WSProtocolHandle.h"
+#include "Include/ws/WSException.h"
 
 #include <vector>
 using namespace std;
@@ -71,38 +72,53 @@ namespace ws
 		HttpRequest req;
 		HttpRequest::Parse(req, pBuf, len);
 
-		if (req.bSuccess && req.method == "GET")
+		if (req.bSuccess)
 		{
-			strKey = req.GetReqHeaderValue("Sec-WebSocket-Key");
-			strProtocol = req.GetReqHeaderValue("Sec-WebSocket-Protocol");
-			strVersion = req.GetReqHeaderValue("Sec-WebSocket-Version");
-
-			if (!strKey.empty())
+			if (req.method == "GET")
 			{
-				string str = strKey + "258EAFA5-E914-47DA-95CA-C5AB0DC85B11";
+				strKey = req.GetReqHeaderValue("Sec-WebSocket-Key");
+				strProtocol = req.GetReqHeaderValue("Sec-WebSocket-Protocol");
+				strVersion = req.GetReqHeaderValue("Sec-WebSocket-Version");
 
-				char hash[32] = { 0 };
-				char bhash[128] = { 0 };
-
-				SHA1_CTX ctx;
-				SHA1_Init(&ctx);
-				SHA1_Update(&ctx, (const unsigned char*)str.c_str(), str.size());
-				SHA1_Final((unsigned char*)hash, &ctx);
-				Base64encode(bhash, hash, 20);
-
-				HttpResponse response(101, "Switching Protocols");
-				response.RemoveResponseHeader();
-				response.SetResponseHeader("Upgrade", "WebSocket");
-				response.SetResponseHeader("Connection", "Upgrade");
-				response.SetResponseHeader("Sec-WebSocket-Accept", bhash);
-
-				if (!strProtocol.empty())
+				if (!strKey.empty())
 				{
-					response.SetResponseHeader("Sec-WebSocket-Protocol", strProtocol);
-				}
+					string str = strKey + "258EAFA5-E914-47DA-95CA-C5AB0DC85B11";
 
-				n = response.BuildBuf(pBuf1, len1, false, false);
+					char hash[32] = { 0 };
+					char bhash[128] = { 0 };
+
+					SHA1_CTX ctx;
+					SHA1_Init(&ctx);
+					SHA1_Update(&ctx, (const unsigned char*)str.c_str(), str.size());
+					SHA1_Final((unsigned char*)hash, &ctx);
+					Base64encode(bhash, hash, 20);
+
+					HttpResponse response(101, "Switching Protocols");
+					response.RemoveResponseHeader();
+					response.SetResponseHeader("Upgrade", "WebSocket");
+					response.SetResponseHeader("Connection", "Upgrade");
+					response.SetResponseHeader("Sec-WebSocket-Accept", bhash);
+
+					if (!strProtocol.empty())
+					{
+						response.SetResponseHeader("Sec-WebSocket-Protocol", strProtocol);
+					}
+
+					n = response.BuildBuf(pBuf1, len1, false, false);
+				}
+				else
+				{
+					throw WSException(EWSExceptionCode::KeyEmpty);
+				}
 			}
+			else
+			{
+				throw WSException(EWSExceptionCode::DenyGet);
+			}
+		}
+		else
+		{
+			throw WSException(EWSExceptionCode::HttpError);
 		}
 
 		return n;
@@ -175,6 +191,8 @@ namespace ws
 			{
 				delete it->buf;
 			}
+
+			throw WSException(EWSExceptionCode::OutBuf);
 		}
 		else
 		{

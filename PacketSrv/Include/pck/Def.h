@@ -12,20 +12,20 @@
 
 namespace pck
 {
-	// 服务器类型
+	// Server type
 	enum class EServerType : int
 	{
-		Plaza = 3,				// 大厅服务
-		Center = 5,				// 中心服务
+		Plaza = 3,				// Plaza
+		Center = 5,				// Center
 
 		None = -1				// None
 	};
 
-	// 服务器ID
+	// Server Id
 	enum class EServerId : int
 	{
-		Plaza		= 1,		// 大厅服务
+		Plaza		= 1,		// Plaza
 
-		None					// 无
+		None					// None
 	};
 }
