@@ -3,6 +3,7 @@
 // 特定于项目的包含文件
 //
 
+#pragma warning(disable:4099)
 #pragma once
 
 #include "targetver.h"

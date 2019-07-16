@@ -47,7 +47,7 @@ namespace ws
 		string strKey;			// ws key
 		string strProtocol;		// ws protocol
 		string strVersion;		// ws version
-		MemoryStream ms;		// ms
+		com::MemoryStream ms;		// ms
 
 	private:
 		int ParseSinglePacket(BYTE* pBuf, int len, BYTE** ppBuf, int* len1);

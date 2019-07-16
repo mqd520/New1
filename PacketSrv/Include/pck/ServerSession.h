@@ -49,19 +49,19 @@ namespace pck
 		void AttachObj(void* pObj);
 
 		//************************************
-		// Method:    收到对端数据事件处理
-		// Parameter: pEvt: tcp事件
+		// Method:    Recv peer data evt handle
+		// Parameter: pEvt: tcp evt
 		//************************************
 		bool OnRecvPeerData(RecvPeerDataEvt* pEvt);
 
 		//************************************
-		// Method:    连接断开事件处理
-		// Parameter: pEvt: tcp事件
+		// Method:    Connection disconnect evt handle
+		// Parameter: pEvt: tcp evt
 		//************************************
 		void OnConnDisconnect(ConnDisconnectEvt* pEvt);
 
 		// Method:    登录服务端请求事件处理
-		// Parameter: data:	包数据
+		// Parameter: data: packet data
 		// Parameter: b:	验证是否通过
 		//************************************
 		void OnLoginSrvRequest(PacketData& data, bool b = true);

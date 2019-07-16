@@ -25,6 +25,8 @@ WebSocketServer::~WebSocketServer()
 void WebSocketServer::OnRecvNewConnection(RecvNewConnEvt* pEvt)
 {
 	wsHandleMgr.Create(pEvt->GetSendRecvSocketId());
+
+	__super::OnRecvNewConnection(pEvt);
 }
 
 void WebSocketServer::OnConnDisconnect(ConnDisconnectEvt* pEvt)
@@ -80,7 +82,7 @@ void WebSocketServer::SendData(SOCKET socket, BYTE* pBuf, int len)
 	SocketInfoData data = TcpCommu::GetSocketDataMgr()->GetSocketData(socket);
 	int clientId = data.socketId;
 
-	WSProtocolHandle* pWSHandle = wsHandleMgr.Get(1);
+	WSProtocolHandle* pWSHandle = wsHandleMgr.Get(clientId);
 	if (pWSHandle)
 	{
 		if (pWSHandle->IsHandShakeComplete())

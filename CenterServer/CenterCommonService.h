@@ -19,20 +19,20 @@ protected:
 
 protected:
 	//************************************
-	// Method:    收到新连接事件处理
-	// Parameter: pEvt: tcp事件
+	// Method:    Recv new connection evt handle
+	// Parameter: pEvt: tcp evt
 	//************************************
 	virtual void OnRecvNewConnection(RecvNewConnEvt* pEvt) override;
 
 	//************************************
-	// Method:    连接断开事件处理
-	// Parameter: pEvt: tcp事件
+	// Method:    Connection disconnect evt handle
+	// Parameter: pEvt: tcp evt
 	//************************************
 	virtual void OnConnDisconnect(ConnDisconnectEvt* pEvt) override;
 
 	//************************************
 	// Method:    登录服务端请求事件处理
-	// Parameter: data:	包数据
+	// Parameter: data: packet data
 	//************************************
 	virtual bool OnLoginSrvRequest(PacketData& data) override;
 

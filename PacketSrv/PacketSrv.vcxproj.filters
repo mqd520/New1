@@ -28,6 +28,12 @@
     <Filter Include="00 Packet\Pck\01 Center">
       <UniqueIdentifier>{444f1b04-07f9-46d5-a06c-79272afb273a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01 Packet Service\01 Client">
+      <UniqueIdentifier>{f462aac1-3129-4164-aa1b-d1c633a37fd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01 Packet Service\02 Server">
+      <UniqueIdentifier>{d6d2ba13-5f08-41da-8e49-e819e003f844}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -46,9 +52,6 @@
     <ClInclude Include="Include\pck\IGPacketSrv.h">
       <Filter>01 Packet Service</Filter>
     </ClInclude>
-    <ClInclude Include="Include\pck\IGPacketSrvClient.h">
-      <Filter>01 Packet Service</Filter>
-    </ClInclude>
     <ClInclude Include="Include\pck\EncryptHelper.h">
       <Filter>03 Encryption</Filter>
     </ClInclude>
@@ -57,9 +60,6 @@
     </ClInclude>
     <ClInclude Include="Include\pck\CommonTool.h">
       <Filter>02 Common</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\pck\IGPacketSrvServer.h">
-      <Filter>01 Packet Service</Filter>
     </ClInclude>
     <ClInclude Include="Include\pck\ServerSession.h">
       <Filter>04 Session</Filter>
@@ -91,6 +91,15 @@
     <ClInclude Include="Include\pck\IGPacket.h">
       <Filter>00 Packet\Pck</Filter>
     </ClInclude>
+    <ClInclude Include="Include\pck\IGPacketSrvClient.h">
+      <Filter>01 Packet Service\01 Client</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\pck\IGPacketSrvServer.h">
+      <Filter>01 Packet Service\02 Server</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\pck\IGPacketSrvWSServer.h">
+      <Filter>01 Packet Service\02 Server</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -100,9 +109,6 @@
       <Filter>00 Packet</Filter>
     </ClCompile>
     <ClCompile Include="IGPacketSrv.cpp">
-      <Filter>01 Packet Service</Filter>
-    </ClCompile>
-    <ClCompile Include="IGPacketSrvClient.cpp">
       <Filter>01 Packet Service</Filter>
     </ClCompile>
     <ClCompile Include="EncryptHelper.cpp">
@@ -116,9 +122,6 @@
     </ClCompile>
     <ClCompile Include="pwd.hpp">
       <Filter>00 Packet</Filter>
-    </ClCompile>
-    <ClCompile Include="IGPacketSrvServer.cpp">
-      <Filter>01 Packet Service</Filter>
     </ClCompile>
     <ClCompile Include="ServerSession.cpp">
       <Filter>04 Session</Filter>
@@ -149,6 +152,15 @@
     </ClCompile>
     <ClCompile Include="IGPacket.cpp">
       <Filter>00 Packet\Pck</Filter>
+    </ClCompile>
+    <ClCompile Include="IGPacketSrvClient.cpp">
+      <Filter>01 Packet Service\01 Client</Filter>
+    </ClCompile>
+    <ClCompile Include="IGPacketSrvServer.cpp">
+      <Filter>01 Packet Service\02 Server</Filter>
+    </ClCompile>
+    <ClCompile Include="IGPacketSrvWSServer.cpp">
+      <Filter>01 Packet Service\02 Server</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

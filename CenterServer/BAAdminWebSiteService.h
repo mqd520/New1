@@ -13,14 +13,14 @@ public:
 
 protected:
 	//************************************
-	// Method:    收到新连接事件处理
-	// Parameter: pEvt: tcp事件
+	// Method:    Recv new connection evt handle
+	// Parameter: pEvt: tcp evt
 	//************************************
 	virtual void OnRecvNewConnection(RecvNewConnEvt* pEvt) override;
 
 	//************************************
-	// Method:    收到对端数据事件处理
-	// Parameter: pEvt: tcp事件
+	// Method:    Recv peer data evt handle
+	// Parameter: pEvt: tcp evt
 	//************************************
 	virtual void OnRecvPeerData(RecvPeerDataEvt* pEvt) override;
 

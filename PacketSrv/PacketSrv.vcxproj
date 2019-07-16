@@ -55,15 +55,15 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../Lib/tc/Include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Lib/tc/Include/;../Common/Include/;../WebSocket/Include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>../Lib/tc/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>TcpCommucation_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -75,7 +75,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../Lib/tc/Include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Lib/tc/Include/;../Common/Include/;../WebSocket/Include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -84,8 +84,8 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>../Lib/tc/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>TcpCommucation.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -98,6 +98,7 @@
     <ClInclude Include="Include\pck\IGPacketSrvClient.h" />
     <ClInclude Include="Include\pck\IGPacketHead.h" />
     <ClInclude Include="Include\pck\IGPacketSrvServer.h" />
+    <ClInclude Include="Include\pck\IGPacketSrvWSServer.h" />
     <ClInclude Include="Include\pck\KeepAlivePacket.h" />
     <ClInclude Include="Include\pck\LoginSrvRequestPacket.h" />
     <ClInclude Include="Include\pck\LoginSrvResultPacket.h" />
@@ -120,6 +121,7 @@
     <ClCompile Include="IGPacketSrvClient.cpp" />
     <ClCompile Include="IGPacketHead.cpp" />
     <ClCompile Include="IGPacketSrvServer.cpp" />
+    <ClCompile Include="IGPacketSrvWSServer.cpp" />
     <ClCompile Include="KeepAlivePacket.cpp" />
     <ClCompile Include="LoginSrvRequestPacket.cpp" />
     <ClCompile Include="LoginSrvResultPacket.cpp" />

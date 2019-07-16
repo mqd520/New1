@@ -12,10 +12,19 @@ namespace pck
 	class IGPacketSrvServer : public TcpServer, public IGPacketSrv
 	{
 	public:
+		//************************************
+		// Method:    Constructor
+		// Parameter: string ip
+		// Parameter: int port
+		// Parameter: EServerType localType
+		// Parameter: bool bRecvPwd: is recv client pwd
+		//************************************
 		IGPacketSrvServer(
 			string ip = "", int port = 0,
 			EServerType localType = EServerType::None,
-			bool bRecvPwd = true);
+			bool bRecvPwd = true
+			);
+
 		virtual ~IGPacketSrvServer();
 
 	protected:
@@ -27,33 +36,33 @@ namespace pck
 		friend class ServerSession;
 
 		//************************************
-		// Method:    收到新连接事件处理
-		// Parameter: pEvt: tcp事件
+		// Method:    Recv new connection evt handle
+		// Parameter: pEvt: tcp evt
 		//************************************
 		virtual void OnRecvNewConnection(RecvNewConnEvt* pEvt) override;
 
 		//************************************
-		// Method:    收到对端数据事件处理
-		// Parameter: pEvt: tcp事件
+		// Method:    Recv peer data evt handle
+		// Parameter: pEvt: tcp evt
 		//************************************
 		virtual void OnRecvPeerData(RecvPeerDataEvt* pEvt) override;
 
 		//************************************
-		// Method:    连接断开事件处理
-		// Parameter: pEvt: tcp事件
+		// Method:    Connection disconnect evt handle
+		// Parameter: pEvt: tcp evt
 		//************************************
 		virtual void OnConnDisconnect(ConnDisconnectEvt* pEvt) override;
 
 		//************************************
-		// Method:    预处理处理包
-		// Parameter: data:	包数据
+		// Method:    Preprocess packet
+		// Parameter: data: packet data
 		//************************************
 		virtual void PreProcessPck(PacketData& data) override;
 
 		//************************************
 		// Method:    登录服务端请求事件处理
 		// Returns:   是否认为登录成功 (是: 将发送LoginSrvResultPacket包, 否: 不发送并关闭连接)
-		// Parameter: data:	包数据
+		// Parameter: data: packet data
 		//************************************
 		virtual bool OnLoginSrvRequest(PacketData& data);
 
@@ -75,7 +84,7 @@ namespace pck
 		// Parameter: int clientId
 		//************************************
 		virtual void OnSessionClose(int clientId);
-		
+
 		//************************************
 		// Method:    发送心跳包
 		//************************************

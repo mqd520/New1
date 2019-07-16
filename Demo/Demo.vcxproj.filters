@@ -19,6 +19,9 @@
     <Filter Include="05 WebSocket">
       <UniqueIdentifier>{d3a52a49-40be-4cbd-af05-310692a5c887}</UniqueIdentifier>
     </Filter>
+    <Filter Include="06 Log">
+      <UniqueIdentifier>{f10fe69a-0421-4ef0-9822-c76ce2c1ffe4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -39,6 +42,9 @@
     <ClInclude Include="WebSocketServer.h">
       <Filter>05 WebSocket</Filter>
     </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>06 Log</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -53,6 +59,9 @@
     </ClCompile>
     <ClCompile Include="WebSocketServer.cpp">
       <Filter>05 WebSocket</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>06 Log</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

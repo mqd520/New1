@@ -91,6 +91,7 @@
   <ItemGroup>
     <ClInclude Include="DbSrvDemo.h" />
     <ClInclude Include="HttpClientDemo.h" />
+    <ClInclude Include="Log.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="WebSocket.h" />
@@ -99,6 +100,7 @@
   <ItemGroup>
     <ClCompile Include="Demo.cpp" />
     <ClCompile Include="HttpClientDemo.cpp" />
+    <ClCompile Include="Log.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

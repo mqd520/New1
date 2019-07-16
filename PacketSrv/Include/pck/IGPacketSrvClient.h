@@ -33,25 +33,25 @@ namespace pck
 	protected:
 		//************************************
 		// Method:    连接服务端完成事件处理
-		// Parameter: pEvt: tcp事件
+		// Parameter: pEvt: tcp evt
 		//************************************
 		virtual void OnConnectSrvCpl(ConnectSrvCplEvt* pEvt) override;
 
 		//************************************
-		// Method:    收到对端数据事件处理
-		// Parameter: pEvt: tcp事件
+		// Method:    Recv peer data evt handle
+		// Parameter: pEvt: tcp evt
 		//************************************
 		virtual void OnRecvPeerData(RecvPeerDataEvt* pEvt) override;
 
 		//************************************
-		// Method:    连接断开事件处理
-		// Parameter: pEvt: tcp事件
+		// Method:    Connection disconnect evt handle
+		// Parameter: pEvt: tcp evt
 		//************************************
 		virtual void OnConnDisconnect(ConnDisconnectEvt* pEvt) override;
 
 		//************************************
-		// Method:    预处理处理包
-		// Parameter: data:	包数据
+		// Method:    Preprocess packet
+		// Parameter: data: packet data
 		//************************************
 		virtual void PreProcessPck(PacketData& data) override;
 
