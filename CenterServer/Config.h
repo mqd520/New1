@@ -5,7 +5,6 @@
 #include "TableSection.h"
 #include "PlazaSection.h"
 #include "BAAdminWebSiteSection.h"
-#include "DbServiceSection.h"
 
 
 // config
@@ -23,7 +22,6 @@ public:
 	const TableSection table;			// Table Section
 	const PlazaSection plaza;			// Plaza Section
 	const BAAdminWebSiteSection ba;		// backstage admin website section
-	const DbServiceSection dbSrv;		// db service section
 
 public:
 	//************************************

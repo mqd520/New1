@@ -102,7 +102,6 @@
     <ClInclude Include="Config.h" />
     <ClInclude Include="DbSection.h" />
     <ClInclude Include="DbService.h" />
-    <ClInclude Include="DbServiceSection.h" />
     <ClInclude Include="NodeService.h" />
     <ClInclude Include="PlazaSection.h" />
     <ClInclude Include="Def.h" />
@@ -126,7 +125,6 @@
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="DbSection.cpp" />
     <ClCompile Include="DbService.cpp" />
-    <ClCompile Include="DbServiceSection.cpp" />
     <ClCompile Include="InitService.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="NodeService.cpp" />

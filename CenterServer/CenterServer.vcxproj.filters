@@ -54,7 +54,6 @@
     <ClInclude Include="Log.h">
       <Filter>01 Log</Filter>
     </ClInclude>
-    <ClInclude Include="InitService.h" />
     <ClInclude Include="CenterService.h">
       <Filter>03 Service</Filter>
     </ClInclude>
@@ -74,9 +73,6 @@
       <Filter>02 Config</Filter>
     </ClInclude>
     <ClInclude Include="PlazaSection.h">
-      <Filter>02 Config\00 Section</Filter>
-    </ClInclude>
-    <ClInclude Include="DbSection.h">
       <Filter>02 Config\00 Section</Filter>
     </ClInclude>
     <ClInclude Include="SendCardSection.h">
@@ -103,7 +99,10 @@
     <ClInclude Include="BAAdminWebSiteSection.h">
       <Filter>02 Config\00 Section</Filter>
     </ClInclude>
-    <ClInclude Include="DbServiceSection.h">
+    <ClInclude Include="InitService.h">
+      <Filter>03 Service</Filter>
+    </ClInclude>
+    <ClInclude Include="DbSection.h">
       <Filter>02 Config\00 Section</Filter>
     </ClInclude>
   </ItemGroup>
@@ -115,7 +114,6 @@
     <ClCompile Include="Log.cpp">
       <Filter>01 Log</Filter>
     </ClCompile>
-    <ClCompile Include="InitService.cpp" />
     <ClCompile Include="CenterService.cpp">
       <Filter>03 Service</Filter>
     </ClCompile>
@@ -132,9 +130,6 @@
       <Filter>02 Config</Filter>
     </ClCompile>
     <ClCompile Include="PlazaSection.cpp">
-      <Filter>02 Config\00 Section</Filter>
-    </ClCompile>
-    <ClCompile Include="DbSection.cpp">
       <Filter>02 Config\00 Section</Filter>
     </ClCompile>
     <ClCompile Include="SendCardSection.cpp">
@@ -161,7 +156,10 @@
     <ClCompile Include="BAAdminWebSiteSection.cpp">
       <Filter>02 Config\00 Section</Filter>
     </ClCompile>
-    <ClCompile Include="DbServiceSection.cpp">
+    <ClCompile Include="InitService.cpp">
+      <Filter>03 Service</Filter>
+    </ClCompile>
+    <ClCompile Include="DbSection.cpp">
       <Filter>02 Config\00 Section</Filter>
     </ClCompile>
   </ItemGroup>
