@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="00 Def">
+      <UniqueIdentifier>{54962578-9c80-4ced-beae-1791574729d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01 Log">
+      <UniqueIdentifier>{44b0a484-18db-46c5-aa5b-60241ba99fdc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03 Config">
+      <UniqueIdentifier>{e857f7aa-4064-454b-99d0-4f54864c2293}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04 Service">
+      <UniqueIdentifier>{97a1e232-35bf-4ac9-8353-f890cc081944}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99 Other">
+      <UniqueIdentifier>{2df3f220-6204-4cb3-9475-0d0a0c6a8b8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03 Config\00 Section">
+      <UniqueIdentifier>{f3614c5a-74b0-48fa-9e06-58ce7352343c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="targetver.h">
+      <Filter>99 Other</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>99 Other</Filter>
+    </ClInclude>
+    <ClInclude Include="InitService.h">
+      <Filter>04 Service</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>01 Log</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>03 Config</Filter>
+    </ClInclude>
+    <ClInclude Include="SendCardSection.h">
+      <Filter>03 Config\00 Section</Filter>
+    </ClInclude>
+    <ClInclude Include="TableSection.h">
+      <Filter>03 Config\00 Section</Filter>
+    </ClInclude>
+    <ClInclude Include="Def.h">
+      <Filter>00 Def</Filter>
+    </ClInclude>
+    <ClInclude Include="PlazaService.h">
+      <Filter>04 Service</Filter>
+    </ClInclude>
+    <ClInclude Include="DbServiceSection.h">
+      <Filter>03 Config\00 Section</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>99 Other</Filter>
+    </ClCompile>
+    <ClCompile Include="PlazaServer.cpp" />
+    <ClCompile Include="InitService.cpp">
+      <Filter>04 Service</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>01 Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>03 Config</Filter>
+    </ClCompile>
+    <ClCompile Include="SendCardSection.cpp">
+      <Filter>03 Config\00 Section</Filter>
+    </ClCompile>
+    <ClCompile Include="TableSection.cpp">
+      <Filter>03 Config\00 Section</Filter>
+    </ClCompile>
+    <ClCompile Include="PlazaService.cpp">
+      <Filter>04 Service</Filter>
+    </ClCompile>
+    <ClCompile Include="DbServiceSection.cpp">
+      <Filter>03 Config\00 Section</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt">
+      <Filter>99 Other</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
