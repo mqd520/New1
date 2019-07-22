@@ -1,26 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="00 Ryeol">
-      <UniqueIdentifier>{51ed4b7e-aab1-4210-ac59-114f8a9941e4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01 Common">
-      <UniqueIdentifier>{23f428cf-9a14-4e38-b1ab-d0313bb8c93b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02 Log">
-      <UniqueIdentifier>{20bf27f1-2758-4404-bcae-95664c482b4c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03 Thread">
-      <UniqueIdentifier>{52b584b2-18a0-451a-acd5-7bffa5c5dbb2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="04 Http Process">
-      <UniqueIdentifier>{6ff3bafb-576a-46c7-b0dd-c0574bfcd41f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="05 HttpClient">
-      <UniqueIdentifier>{633e4514-cd6e-43a0-b7ca-4bfa857b7d3b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="99 Other">
       <UniqueIdentifier>{8e941ea2-68a6-4df6-b1fd-be34dbb02613}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00 Log">
+      <UniqueIdentifier>{20bf27f1-2758-4404-bcae-95664c482b4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01 Thread">
+      <UniqueIdentifier>{52b584b2-18a0-451a-acd5-7bffa5c5dbb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02 Http Process">
+      <UniqueIdentifier>{6ff3bafb-576a-46c7-b0dd-c0574bfcd41f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03 HttpClient">
+      <UniqueIdentifier>{633e4514-cd6e-43a0-b7ca-4bfa857b7d3b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -31,47 +25,29 @@
       <Filter>99 Other</Filter>
     </ClInclude>
     <ClInclude Include="Include\hc\HttpClient.h">
-      <Filter>05 HttpClient</Filter>
+      <Filter>03 HttpClient</Filter>
     </ClInclude>
     <ClInclude Include="Thread.h">
-      <Filter>03 Thread</Filter>
+      <Filter>01 Thread</Filter>
     </ClInclude>
     <ClInclude Include="HttpRequestThread.h">
-      <Filter>03 Thread</Filter>
-    </ClInclude>
-    <ClInclude Include="CommonTool.h">
-      <Filter>01 Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Lib\Ryeol\Include\Ryeol\RyeolErrMgmtFunc.h">
-      <Filter>00 Ryeol</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Lib\Ryeol\Include\Ryeol\RyeolException.h">
-      <Filter>00 Ryeol</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Lib\Ryeol\Include\Ryeol\RyeolHttpClient.h">
-      <Filter>00 Ryeol</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Lib\Ryeol\Include\Ryeol\RyeolStringFunc.h">
-      <Filter>00 Ryeol</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Lib\Ryeol\Include\Ryeol\SafeInt.hpp">
-      <Filter>00 Ryeol</Filter>
+      <Filter>01 Thread</Filter>
     </ClInclude>
     <ClInclude Include="Include\hc\HttpClientApp.h" />
     <ClInclude Include="Include\hc\HttpRequestMgr.h">
-      <Filter>04 Http Process</Filter>
+      <Filter>02 Http Process</Filter>
     </ClInclude>
     <ClInclude Include="Include\hc\HttpClientMgr.h">
-      <Filter>05 HttpClient</Filter>
+      <Filter>03 HttpClient</Filter>
     </ClInclude>
     <ClInclude Include="HttpResponseMgr.h">
-      <Filter>04 Http Process</Filter>
+      <Filter>02 Http Process</Filter>
     </ClInclude>
     <ClInclude Include="HttpResponseThread.h">
-      <Filter>03 Thread</Filter>
+      <Filter>01 Thread</Filter>
     </ClInclude>
     <ClInclude Include="Include\hc\Log.h">
-      <Filter>02 Log</Filter>
+      <Filter>00 Log</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -79,44 +55,29 @@
       <Filter>99 Other</Filter>
     </ClCompile>
     <ClCompile Include="HttpClient.cpp">
-      <Filter>05 HttpClient</Filter>
+      <Filter>03 HttpClient</Filter>
     </ClCompile>
     <ClCompile Include="Thread.cpp">
-      <Filter>03 Thread</Filter>
+      <Filter>01 Thread</Filter>
     </ClCompile>
     <ClCompile Include="HttpRequestThread.cpp">
-      <Filter>03 Thread</Filter>
+      <Filter>01 Thread</Filter>
     </ClCompile>
     <ClCompile Include="HttpRequestMgr.cpp">
-      <Filter>04 Http Process</Filter>
-    </ClCompile>
-    <ClCompile Include="CommonTool.cpp">
-      <Filter>01 Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Lib\Ryeol\Include\Ryeol\RyeolErrMgmtFunc.cpp">
-      <Filter>00 Ryeol</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Lib\Ryeol\Include\Ryeol\RyeolException.cpp">
-      <Filter>00 Ryeol</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Lib\Ryeol\Include\Ryeol\RyeolHttpClient.cpp">
-      <Filter>00 Ryeol</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Lib\Ryeol\Include\Ryeol\RyeolStringFunc.cpp">
-      <Filter>00 Ryeol</Filter>
+      <Filter>02 Http Process</Filter>
     </ClCompile>
     <ClCompile Include="HttpClientMgr.cpp">
-      <Filter>05 HttpClient</Filter>
+      <Filter>03 HttpClient</Filter>
     </ClCompile>
     <ClCompile Include="HttpClientApp.cpp" />
     <ClCompile Include="HttpResponseMgr.cpp">
-      <Filter>04 Http Process</Filter>
+      <Filter>02 Http Process</Filter>
     </ClCompile>
     <ClCompile Include="HttpResponseThread.cpp">
-      <Filter>03 Thread</Filter>
+      <Filter>01 Thread</Filter>
     </ClCompile>
     <ClCompile Include="Log.cpp">
-      <Filter>02 Log</Filter>
+      <Filter>00 Log</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

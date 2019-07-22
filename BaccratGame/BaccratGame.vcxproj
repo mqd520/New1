@@ -56,13 +56,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../Lib/log/Include/;../Lib/json/Include/;../Lib/tc/Include/;../Common/Include/;../HttpClient/Include/;../GameDef/Include/;../DbSrv/Include/;../PacketSrv/Include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Lib/log/Include/;../Lib/tc/Include/;../Common/Include/;../Ryeol/Include/;../Json/Include/;../HttpClient/Include/;../GameDef/Include/;../DbSrv/Include/;../PacketSrv/Include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>../Lib/json/;../Lib/log/;../Lib/tc/;../Common/$(OutDir)/;../GameDef/$(OutDir)/;../HttpClient/$(OutDir)/;../DbSrv/$(OutDir)/;../PacketSrv/$(OutDir)/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>JsonCPP_d.lib;log_d.lib;TcpCommucation_d.lib;Common.lib;HttpClient.lib;GameDef.lib;DbSrv.lib;PacketSrv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../Lib/log/;../Lib/tc/;../Common/$(OutDir)/;../Ryeol/$(OutDir)/;../Json/$(OutDir)/;../HttpClient/$(OutDir)/;../PacketSrv/$(OutDir)/;../DbSrv/$(OutDir)/;../GameDef/$(OutDir)/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>log_d.lib;TcpCommucation_d.lib;Common.lib;Ryeol.lib;Json.lib;HttpClient.lib;GameDef.lib;DbSrv.lib;PacketSrv.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy "$(ProjectDir)Runtime requirement\*.*" "$(ProjectDir)$(OutDir)"</Command>
@@ -77,15 +77,15 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../Lib/log/Include/;../Lib/json/Include/;../Lib/tc/Include/;../Common/Include/;../HttpClient/Include/;../GameDef/Include/;../DbSrv/Include/;../PacketSrv/Include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Lib/log/Include/;../Lib/tc/Include/;../Common/Include/;../Ryeol/Include/;../Json/Include/;../HttpClient/Include/;../GameDef/Include/;../DbSrv/Include/;../PacketSrv/Include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>../Lib/json/;../Lib/log/;../Lib/tc/;../Common/$(OutDir)/;../GameDef/$(OutDir)/;../HttpClient/$(OutDir)/;../DbSrv/$(OutDir)/;../PacketSrv/$(OutDir)/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>JsonCPP.lib;log.lib;TcpCommucation.lib;Common.lib;HttpClient.lib;GameDef.lib;DbSrv.lib;PacketSrv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../Lib/log/;../Lib/tc/;../Common/$(OutDir)/;../Ryeol/$(OutDir)/;../Json/$(OutDir)/;../HttpClient/$(OutDir)/;../PacketSrv/$(OutDir)/;../DbSrv/$(OutDir)/;../GameDef/$(OutDir)/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>log.lib;TcpCommucation.lib;Common.lib;Ryeol.lib;Json.lib;HttpClient.lib;GameDef.lib;DbSrv.lib;PacketSrv.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy "$(ProjectDir)Runtime requirement\*.*" "$(ProjectDir)$(OutDir)"</Command>

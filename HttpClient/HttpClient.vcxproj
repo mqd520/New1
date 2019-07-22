@@ -54,7 +54,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../Lib/Ryeol/Include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Ryeol/Include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -70,7 +70,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../Lib/Ryeol/Include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Ryeol/Include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -83,12 +83,6 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Lib\Ryeol\Include\Ryeol\RyeolErrMgmtFunc.h" />
-    <ClInclude Include="..\Lib\Ryeol\Include\Ryeol\RyeolException.h" />
-    <ClInclude Include="..\Lib\Ryeol\Include\Ryeol\RyeolHttpClient.h" />
-    <ClInclude Include="..\Lib\Ryeol\Include\Ryeol\RyeolStringFunc.h" />
-    <ClInclude Include="..\Lib\Ryeol\Include\Ryeol\SafeInt.hpp" />
-    <ClInclude Include="CommonTool.h" />
     <ClInclude Include="HttpResponseThread.h" />
     <ClInclude Include="HttpRequestThread.h" />
     <ClInclude Include="HttpResponseMgr.h" />
@@ -102,11 +96,6 @@
     <ClInclude Include="Thread.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Lib\Ryeol\Include\Ryeol\RyeolErrMgmtFunc.cpp" />
-    <ClCompile Include="..\Lib\Ryeol\Include\Ryeol\RyeolException.cpp" />
-    <ClCompile Include="..\Lib\Ryeol\Include\Ryeol\RyeolHttpClient.cpp" />
-    <ClCompile Include="..\Lib\Ryeol\Include\Ryeol\RyeolStringFunc.cpp" />
-    <ClCompile Include="CommonTool.cpp" />
     <ClCompile Include="HttpClient.cpp" />
     <ClCompile Include="HttpClientApp.cpp" />
     <ClCompile Include="Log.cpp" />

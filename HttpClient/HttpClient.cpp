@@ -2,7 +2,7 @@
 #include "Include/hc/HttpClient.h"
 #include "Include/hc/HttpClientApp.h"
 
-#include "ryeol/RyeolHttpClient.h"
+#include "Ryeol/RyeolHttpClient.h"
 using namespace Ryeol;
 
 namespace hc
