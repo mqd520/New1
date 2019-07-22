@@ -16,6 +16,15 @@
     <Filter Include="02 Db Service\00 Player">
       <UniqueIdentifier>{12eafbe9-eee4-4fa2-a3e2-2fa1a669a89e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02 Db Service\01 Table">
+      <UniqueIdentifier>{a8c79837-b1fa-4926-a790-40494176b558}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00 Def\00 Player">
+      <UniqueIdentifier>{3e55d3e2-3f06-459c-bed6-007431dcab0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00 Def\01 Table">
+      <UniqueIdentifier>{ea84fd70-1357-4db8-a7e9-0ae3d3fbe7cb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -46,6 +55,15 @@
     <ClInclude Include="Include\db\DbResult.h">
       <Filter>00 Def</Filter>
     </ClInclude>
+    <ClInclude Include="Include\db\PlayerLoginResult.h">
+      <Filter>00 Def\00 Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\db\TableDataSrv.h">
+      <Filter>02 Db Service\01 Table</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\db\TableDataResult.h">
+      <Filter>00 Def\01 Table</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -64,6 +82,9 @@
       <Filter>01 Log</Filter>
     </ClCompile>
     <ClCompile Include="DbServiceApp.cpp" />
+    <ClCompile Include="TableDataSrv.cpp">
+      <Filter>02 Db Service\01 Table</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt">

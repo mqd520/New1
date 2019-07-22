@@ -41,7 +41,7 @@ namespace hc
 		this->url = url;
 	}
 
-	void HttpClient::HttpGet(string query /*= ""*/)
+	void HttpClient::HttpGet(string query, string contentType)
 	{
 		HttpClientApp::GetHttpClientMgr()->Add(this);
 
@@ -59,10 +59,24 @@ namespace hc
 		info.url1 = url1;
 		info.url = url;
 		info.method = "GET";
+		if (!contentType.empty())
+		{
+			info.vecHeaders.push_back({ "Content-Type", contentType });
+		}
 		HttpClientApp::GetHttpRequestMgr()->Push(info);
 	}
 
-	void HttpClient::HttpPost(vector<pair<string, string>>& params, string query /*= ""*/)
+	void HttpClient::HttpGet(string query)
+	{
+		HttpGet(query, "text/html");
+	}
+
+	void HttpClient::HttpGet()
+	{
+		HttpGet("");
+	}
+
+	void HttpClient::HttpPost(vector<pair<string, string>>& params, string query, string contentType)
 	{
 		HttpClientApp::GetHttpClientMgr()->Add(this);
 
@@ -81,8 +95,26 @@ namespace hc
 		info.url = url;
 		info.method = "POST";
 		info.vecParams = params;
-
+		if (!contentType.empty())
+		{
+			info.vecHeaders.push_back({ "Content-Type", contentType });
+		}
 		HttpClientApp::GetHttpRequestMgr()->Push(info);
+	}
+
+	void HttpClient::HttpPost(vector<pair<string, string>>& params)
+	{
+		HttpPost(params, "", "application/x-www-form-urlencoded");
+	}
+
+	void HttpClient::HttpPost(string contentType)
+	{
+		HttpPost(vector<pair<string, string>>(), "", contentType);
+	}
+
+	void HttpClient::HttpPost()
+	{
+		HttpPost(vector<pair<string, string>>());
 	}
 
 	void HttpClient::Exit()

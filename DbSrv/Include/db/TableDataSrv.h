@@ -1,24 +1,24 @@
 #pragma once
 
 #include "DbService.h"
-#include "PlayerLoginResult.h"
+#include "TableDataResult.h"
 
 namespace db
 {
-	// Player Login
-	class PlayerLoginSrv : public DbService
+	// Load table data
+	class TableDataSrv : public DbService
 	{
 	public:
 		//************************************
 		// Method:    constructor
 		//************************************
-		PlayerLoginSrv();
+		TableDataSrv();
 
 		//************************************
 		// Method:    constructor
 		// Parameter: string addr: http request addr
 		//************************************
-		PlayerLoginSrv(string addr);
+		TableDataSrv(string addr);
 
 	protected:
 		//************************************

@@ -18,6 +18,9 @@ namespace pck
 		Plaza = 3,				// Plaza
 		Center = 5,				// Center
 
+		Baccrat = 101,			// Baccrat game srv
+		DragonTigger = 102,		// DragonTigger game srv
+
 		None = -1				// None
 	};
 

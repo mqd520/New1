@@ -6,7 +6,7 @@ using namespace std;
 
 namespace db
 {
-	// db iutput patameter
+	// db output patameter
 	class DbOutputParameter
 	{
 	public:
@@ -15,19 +15,4 @@ namespace db
 	public:
 		DbOutputParameter(int count = 0) : nCount(count){}
 	};
-
-
-
-
-	// Player	---------------------------------------------------------------------------------------
-
-	// PlayerLoginResult Parameter
-	class PlayerLoginResultPara : public DbOutputParameter
-	{
-	public:
-		int nA;				// nA
-		string str1;		// str1
-	};
-
-	// Player	---------------------------------------------------------------------------------------
 }

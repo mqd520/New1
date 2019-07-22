@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="99 Other">
+      <UniqueIdentifier>{4a978218-56c9-42c9-b363-8e65e285da96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00 Def">
+      <UniqueIdentifier>{ae056fa3-b3b6-4326-8d72-714325e0503d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01 Log">
+      <UniqueIdentifier>{040ef539-1ec1-4252-8afd-433972b19b6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02 Config">
+      <UniqueIdentifier>{fbb43687-1fe8-442d-a447-55e01c3c1e05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03 Service">
+      <UniqueIdentifier>{a5f6ecca-f570-46eb-8c77-1e09e74c0966}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02 Config\00 Section">
+      <UniqueIdentifier>{9fe09415-ddea-402c-a005-fb9f0b972a15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03 Service\02 Game Service">
+      <UniqueIdentifier>{32a6fa47-9de9-4ca2-8e36-86f72473c0b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03 Service\02 Game Service\00 Table Data">
+      <UniqueIdentifier>{55e150a4-68d1-4969-acc5-784b70bfb179}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03 Service\01 Tcp Client Service">
+      <UniqueIdentifier>{608b9a4b-fdb7-4c76-8b33-43a2a48ae5b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03 Service\02 Game Service\01 Game Round">
+      <UniqueIdentifier>{da38818e-a901-4f76-8712-6a183ea95134}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03 Service\02 Game Service\02 Game Round Status">
+      <UniqueIdentifier>{6e94fff4-331f-4065-8afa-6fb1fe778c28}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>99 Other</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>99 Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Def.h">
+      <Filter>00 Def</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>01 Log</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>02 Config</Filter>
+    </ClInclude>
+    <ClInclude Include="DbServiceSection.h">
+      <Filter>02 Config\00 Section</Filter>
+    </ClInclude>
+    <ClInclude Include="InitService.h">
+      <Filter>03 Service</Filter>
+    </ClInclude>
+    <ClInclude Include="BaccratService.h">
+      <Filter>03 Service</Filter>
+    </ClInclude>
+    <ClInclude Include="GameService.h">
+      <Filter>03 Service\02 Game Service</Filter>
+    </ClInclude>
+    <ClInclude Include="GameServiceMgr.h">
+      <Filter>03 Service\02 Game Service</Filter>
+    </ClInclude>
+    <ClInclude Include="TableDataMgr.h">
+      <Filter>03 Service\02 Game Service\00 Table Data</Filter>
+    </ClInclude>
+    <ClInclude Include="GameCenterService.h">
+      <Filter>03 Service\01 Tcp Client Service</Filter>
+    </ClInclude>
+    <ClInclude Include="GameCenterSection.h">
+      <Filter>02 Config\00 Section</Filter>
+    </ClInclude>
+    <ClInclude Include="GameRoundService.h">
+      <Filter>03 Service\02 Game Service\01 Game Round</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>99 Other</Filter>
+    </ClCompile>
+    <ClCompile Include="BaccratGame.cpp" />
+    <ClCompile Include="Log.cpp">
+      <Filter>01 Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>02 Config</Filter>
+    </ClCompile>
+    <ClCompile Include="DbServiceSection.cpp">
+      <Filter>02 Config\00 Section</Filter>
+    </ClCompile>
+    <ClCompile Include="InitService.cpp">
+      <Filter>03 Service</Filter>
+    </ClCompile>
+    <ClCompile Include="BaccratService.cpp">
+      <Filter>03 Service</Filter>
+    </ClCompile>
+    <ClCompile Include="GameService.cpp">
+      <Filter>03 Service\02 Game Service</Filter>
+    </ClCompile>
+    <ClCompile Include="GameServiceMgr.cpp">
+      <Filter>03 Service\02 Game Service</Filter>
+    </ClCompile>
+    <ClCompile Include="TableDataMgr.cpp">
+      <Filter>03 Service\02 Game Service\00 Table Data</Filter>
+    </ClCompile>
+    <ClCompile Include="GameCenterService.cpp">
+      <Filter>03 Service\01 Tcp Client Service</Filter>
+    </ClCompile>
+    <ClCompile Include="GameCenterSection.cpp">
+      <Filter>02 Config\00 Section</Filter>
+    </ClCompile>
+    <ClCompile Include="GameRoundService.cpp">
+      <Filter>03 Service\02 Game Service\01 Game Round</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt">
+      <Filter>99 Other</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

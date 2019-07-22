@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="99 Other">
+      <UniqueIdentifier>{4421a0a6-e7f6-4821-b162-c571c6cea01a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01 Table">
+      <UniqueIdentifier>{47836fac-5ff9-40b9-ada2-8259f5e19fe9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02 Game">
+      <UniqueIdentifier>{2aecdf28-1723-4fe3-b389-c58a064cdbb8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>99 Other</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>99 Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\def\TableDef.h">
+      <Filter>01 Table</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\def\GameDef.h">
+      <Filter>02 Game</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt">
+      <Filter>99 Other</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>99 Other</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

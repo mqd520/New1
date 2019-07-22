@@ -16,30 +16,25 @@ namespace db
 
 	}
 
-	PlayerLoginSrv::~PlayerLoginSrv()
-	{
-
-	}
-
 	DbResult* PlayerLoginSrv::ParseDbResult(HttpResponseData& data)
 	{
 		PlayerLoginResult* pResult = new PlayerLoginResult();
 
-		Json::Value root;
-		Json::Reader reader;
-		reader.parse(data.bufContent, root);
+		//Json::Value root;
+		//Json::Reader reader;
+		//reader.parse(data.bufContent, root);
 
-		pResult->bSuccess = true;
-		pResult->strAccount = root["account"].asString();
+		//pResult->bSuccess = true;
+		//pResult->strAccount = root["account"].asString();
 
-		PlayerLoginResultPara* pPara = new PlayerLoginResultPara();
-		pPara->nCount = 2;
-		pPara->nA = 1;
-		pPara->str1 = "str1";
+		//PlayerLoginResultPara* pPara = new PlayerLoginResultPara();
+		//pPara->nCount = 2;
+		//pPara->nA = 1;
+		//pPara->str1 = "str1";
 
-		pResult->pParam = pPara;
+		//pResult->pParam = pPara;
 
-		DbLog::WriteLine(EDbLogType::Error, "parse ***** error, json: %s", data.bufContent.c_str());
+		//DbLog::WriteLine(EDbLogType::Error, "parse ***** error, json: %s", data.bufContent.c_str());
 
 		return pResult;
 	}

@@ -30,18 +30,4 @@ namespace db
 			}
 		}
 	};
-
-
-
-
-	// Player	---------------------------------------------------------------------------------------
-
-	// PlayerLoginResult
-	class PlayerLoginResult : public DbResult
-	{
-	public:
-		string strAccount;		// account
-	};
-
-	// Player	---------------------------------------------------------------------------------------
 }

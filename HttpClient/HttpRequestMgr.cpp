@@ -58,6 +58,12 @@ namespace hc
 			CHttpClient http;
 			CHttpResponse* response = NULL;
 
+			for (vector<pair<string, string>>::iterator it = info.vecHeaders.begin(); it != info.vecHeaders.end(); it++)
+			{
+				wstring key = CommonTool::GB2312_2_UTF16((char*)it->first.c_str());
+				wstring val = CommonTool::GB2312_2_UTF16((char*)it->second.c_str());
+				http.SetHeader(key.c_str(), val.c_str());
+			}
 
 			string params = "";
 			for (vector<pair<string, string>>::iterator it = info.vecParams.begin(); it != info.vecParams.end(); it++)

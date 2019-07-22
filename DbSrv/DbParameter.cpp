@@ -23,6 +23,83 @@ namespace db
 
 	void DbParameter::Add(string name, INT16 val)
 	{
-		vecDbParams.push_back({ name, "value" });
+		char ch[10] = { 0 };
+		_itoa_s(val, ch, 10);
+		vecDbParams.push_back({ name, ch });
+	}
+
+	void DbParameter::Add(string name, UINT16 val)
+	{
+		char ch[10] = { 0 };
+		_itoa_s(val, ch, 10);
+		vecDbParams.push_back({ name, ch });
+	}
+
+	void DbParameter::Add(string name, INT32 val)
+	{
+		char ch[10] = { 0 };
+		_itoa_s(val, ch, 10);
+		vecDbParams.push_back({ name, ch });
+	}
+
+	void DbParameter::Add(string name, UINT32 val)
+	{
+		char ch[10] = { 0 };
+		_itoa_s(val, ch, 10);
+		vecDbParams.push_back({ name, ch });
+	}
+
+	void DbParameter::Add(string name, INT64 val)
+	{
+		char ch[10] = { 0 };
+		sprintf_s(ch, "%d", val);
+		vecDbParams.push_back({ name, ch });
+	}
+
+	void DbParameter::Add(string name, UINT64 val)
+	{
+		char ch[10] = { 0 };
+		sprintf_s(ch, "%d", val);
+		vecDbParams.push_back({ name, ch });
+	}
+
+	//void DbParameter::Add(string name, SHORT val)
+	//{
+	//	char ch[10] = { 0 };
+	//	_itoa_s(val, ch, 10);
+	//	vecDbParams.push_back({ name, ch });
+	//}
+
+	//void DbParameter::Add(string name, USHORT val)
+	//{
+	//	char ch[10] = { 0 };
+	//	_itoa_s(val, ch, 10);
+	//	vecDbParams.push_back({ name, ch });
+	//}
+
+	void DbParameter::Add(string name, BYTE val)
+	{
+		char ch[10] = { 0 };
+		_itoa_s(val, ch, 10);
+		vecDbParams.push_back({ name, ch });
+	}
+
+	void DbParameter::Add(string name, float val)
+	{
+		char ch[10] = { 0 };
+		sprintf_s(ch, "%f", val);
+		vecDbParams.push_back({ name, ch });
+	}
+
+	void DbParameter::Add(string name, double val)
+	{
+		char ch[10] = { 0 };
+		sprintf_s(ch, "%f", val);
+		vecDbParams.push_back({ name, ch });
+	}
+
+	void DbParameter::Add(string name, string val)
+	{
+		vecDbParams.push_back({ name, val });
 	}
 }

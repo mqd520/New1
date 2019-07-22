@@ -3,7 +3,7 @@
 #include "InitService.h"
 #include "Log.h"
 #include "Config.h"
-#include "PlazaService.h"
+#include "BaccratService.h"
 
 #include "com/ExceptionHandler.h"
 using namespace com;
@@ -41,10 +41,10 @@ void InitService::OnMainRun()
 	SetConsoleCtrlHandler((PHANDLER_ROUTINE)OnCtrlHandler, true);
 
 	ExceptionHandler::Init();
-	ExceptionHandler::SetFileName("TableService.exe");
+	ExceptionHandler::SetFileName("PlazaServer.exe");
 	ExceptionHandler::SetCallback(OnException);
 
-	LogSrv::Init("TableService.exe.Log");
+	LogSrv::Init("PlazaServer.exe.Log");
 
 	_cfg.Init();
 
@@ -58,7 +58,7 @@ void InitService::OnMainRun()
 	DbServiceApp::SetDbSrvAddr(_cfg.dbSrv.strDbSrvAddr);
 	DbLog::SetCallbackFn(std::bind(OnDbLog, _1, _2, _3));
 
-	PlazaService::GetInstance()->Init();
+	BaccratService::GetInstance()->Init();
 }
 
 void InitService::OnMainExit()
@@ -71,8 +71,8 @@ void InitService::OnMainExit()
 
 	TcpCommu::Exit();
 
-	PlazaService::GetInstance()->Exit();
-	delete PlazaService::GetInstance();
+	BaccratService::GetInstance()->Exit();
+	delete BaccratService::GetInstance();
 }
 
 bool OnCtrlHandler(DWORD fdwctrltype)

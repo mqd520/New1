@@ -69,6 +69,18 @@ namespace db
 		//************************************
 		virtual void ProcessDbResult(DbResult* pResult);
 
+		//************************************
+		// Method:    Is HttpResponseData UTF8
+		// Parameter: HttpResponseData & data
+		//************************************
+		bool IsUTF8(HttpResponseData& data);
+
+		//************************************
+		// Method:    UTF8 to GB2312
+		// Parameter: str: UTF8 string
+		//************************************
+		string UTF8_2_GB2312(string str);
+
 	public:
 		//************************************
 		// Method:    Get db service addr
@@ -89,8 +101,34 @@ namespace db
 
 		//************************************
 		// Method:    execute db request
+		// Parameter: method: request method
+		// Parameter: DbParameter * pParam
+		// Parameter: query: query param
+		// Parameter: contentType: request Content-Type
+		//************************************
+		void ExecuteQuery(string method, DbParameter* pParam, string query, string contentType);
+
+		//************************************
+		// Method:    execute db request
+		// Parameter: DbParameter * pParam
+		// Parameter: query: query param
+		//************************************
+		void ExecuteQuery(DbParameter* pParam, string query);
+
+		//************************************
+		// Method:    execute db request
 		// Parameter: DbParameter * pParam
 		//************************************
-		void ExecuteQuery(DbParameter* pParam = NULL);
+		void ExecuteQuery(DbParameter* pParam);
+
+		//************************************
+		// Method:    execute db request
+		//************************************
+		void ExecuteQuery();
+
+		//************************************
+		// Method:    Exit
+		//************************************
+		virtual void Exit();
 	};
 }

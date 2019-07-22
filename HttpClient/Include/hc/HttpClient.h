@@ -35,7 +35,8 @@ namespace hc
 		string method;	// http request method
 		string url;		// request url
 		string url1;	// request url(not include query string)
-		vector<pair<string, string>> vecParams;
+		vector<pair<string, string>> vecParams;		// request param
+		vector<pair<string, string>> vecHeaders;	// request headers
 	}HttpRequestParaInfo;
 
 
@@ -89,15 +90,46 @@ namespace hc
 
 		//************************************
 		// Method:    Send http Get request
+		// Parameter: query: query param
+		// Parameter: contentType: 
 		//************************************
-		void HttpGet(string query = "");
+		void HttpGet(string query, string contentType);
+
+		//************************************
+		// Method:    Send http Get request
+		// Parameter: query: query param
+		//************************************
+		void HttpGet(string query);
+
+		//************************************
+		// Method:    Send http Get request
+		//************************************
+		void HttpGet();
 
 		//************************************
 		// Method:    Send http Post request
-		// Parameter: pBuf: send buf
-		// Parameter: len:  send buf len
+		// Parameter: params: request param
+		// Parameter: query: query param
+		// Parameter: contentType: 
 		//************************************
-		void HttpPost(vector<pair<string, string>>& params , string query = "");
+		void HttpPost(vector<pair<string, string>>& params, string query, string contentType);
+
+		//************************************
+		// Method:    Send http Post request
+		// Parameter: params: request param
+		//************************************
+		void HttpPost(vector<pair<string, string>>& params);
+
+		//************************************
+		// Method:    Send http Post request
+		// Parameter: contentType: 
+		//************************************
+		void HttpPost(string contentType);
+
+		//************************************
+		// Method:    Send http Post request
+		//************************************
+		void HttpPost();
 
 		//************************************
 		// Method:    Exit
