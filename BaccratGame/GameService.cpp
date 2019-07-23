@@ -3,7 +3,8 @@
 
 GameService::GameService(int nTableId) :
 tableDataMgr(nTableId),
-gameRoundDataMgr(nTableId),
+gameRoundSrv(nTableId),
+gameStatusMgr(nTableId),
 
 nTableId(nTableId)
 {
@@ -13,13 +14,13 @@ nTableId(nTableId)
 void GameService::Init()
 {
 	tableDataMgr.Init();
-	gameRoundDataMgr.Init();
+	gameRoundSrv.Init();
 }
 
 void GameService::Exit()
 {
 	tableDataMgr.Exit();
-	gameRoundDataMgr.Exit();
+	gameRoundSrv.Exit();
 }
 
 int GameService::GetTableId()
@@ -32,7 +33,12 @@ TableDataMgr* GameService::GetTableDataMgr()
 	return &tableDataMgr;
 }
 
-GameRoundService* GameService::GetGameDataRoundDataMgr()
+GameRoundService* GameService::GetGameRoundSrv()
 {
-	return &gameRoundDataMgr;
+	return &gameRoundSrv;
+}
+
+GameStatusMgr* GameService::GetGameStatusMgr()
+{
+	return &gameStatusMgr;
 }

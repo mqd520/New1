@@ -101,6 +101,9 @@
     <ClInclude Include="GameRoundService.h" />
     <ClInclude Include="GameService.h" />
     <ClInclude Include="GameServiceMgr.h" />
+    <ClInclude Include="GameStatus.h" />
+    <ClInclude Include="GameStatusMgr.h" />
+    <ClInclude Include="GS_Stop.h" />
     <ClInclude Include="InitService.h" />
     <ClInclude Include="Log.h" />
     <ClInclude Include="stdafx.h" />
@@ -117,6 +120,9 @@
     <ClCompile Include="GameRoundService.cpp" />
     <ClCompile Include="GameService.cpp" />
     <ClCompile Include="GameServiceMgr.cpp" />
+    <ClCompile Include="GameStatus.cpp" />
+    <ClCompile Include="GameStatusMgr.cpp" />
+    <ClCompile Include="GS_Stop.cpp" />
     <ClCompile Include="InitService.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="stdafx.cpp">

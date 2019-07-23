@@ -3,7 +3,7 @@
 #include <vector>
 using namespace std;
 
-#include "def/GameDef.h"
+#include "gameDef/GameDef.h"
 using namespace gameDef;
 
 

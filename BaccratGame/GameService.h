@@ -2,6 +2,7 @@
 
 #include "TableDataMgr.h"
 #include "GameRoundService.h"
+#include "GameStatusMgr.h"
 
 
 // Game Service
@@ -13,9 +14,8 @@ public:
 private:
 	int nTableId;							// table Id
 	TableDataMgr tableDataMgr;				// table data mgr obj
-	GameRoundService gameRoundDataMgr;	// GameRoundDataService obj
-
-private:
+	GameRoundService gameRoundSrv;			// GameRoundDataService obj
+	GameStatusMgr gameStatusMgr;			// game status mgr
 
 public:
 	//************************************
@@ -35,5 +35,7 @@ public:
 
 	TableDataMgr* GetTableDataMgr();
 
-	GameRoundService* GetGameDataRoundDataMgr();
+	GameRoundService* GetGameRoundSrv();
+
+	GameStatusMgr* GetGameStatusMgr();
 };

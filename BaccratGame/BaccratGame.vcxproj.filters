@@ -31,8 +31,11 @@
     <Filter Include="03 Service\02 Game Service\01 Game Round">
       <UniqueIdentifier>{da38818e-a901-4f76-8712-6a183ea95134}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03 Service\02 Game Service\02 Game Round Status">
+    <Filter Include="03 Service\02 Game Service\02 Game Status">
       <UniqueIdentifier>{6e94fff4-331f-4065-8afa-6fb1fe778c28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03 Service\02 Game Service\02 Game Status\00 Sub Status">
+      <UniqueIdentifier>{2e12780c-cf86-46c3-9c8a-3e0279f322f2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -78,6 +81,15 @@
     <ClInclude Include="GameRoundService.h">
       <Filter>03 Service\02 Game Service\01 Game Round</Filter>
     </ClInclude>
+    <ClInclude Include="GameStatusMgr.h">
+      <Filter>03 Service\02 Game Service\02 Game Status</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStatus.h">
+      <Filter>03 Service\02 Game Service\02 Game Status</Filter>
+    </ClInclude>
+    <ClInclude Include="GS_Stop.h">
+      <Filter>03 Service\02 Game Service\02 Game Status\00 Sub Status</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -116,6 +128,15 @@
     </ClCompile>
     <ClCompile Include="GameRoundService.cpp">
       <Filter>03 Service\02 Game Service\01 Game Round</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStatusMgr.cpp">
+      <Filter>03 Service\02 Game Service\02 Game Status</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStatus.cpp">
+      <Filter>03 Service\02 Game Service\02 Game Status</Filter>
+    </ClCompile>
+    <ClCompile Include="GS_Stop.cpp">
+      <Filter>03 Service\02 Game Service\02 Game Status\00 Sub Status</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

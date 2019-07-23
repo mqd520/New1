@@ -18,10 +18,10 @@
     <ClInclude Include="targetver.h">
       <Filter>99 Other</Filter>
     </ClInclude>
-    <ClInclude Include="Include\def\TableDef.h">
+    <ClInclude Include="Include\gameDef\TableDef.h">
       <Filter>01 Table</Filter>
     </ClInclude>
-    <ClInclude Include="Include\def\GameDef.h">
+    <ClInclude Include="Include\gameDef\GameDef.h">
       <Filter>02 Game</Filter>
     </ClInclude>
   </ItemGroup>
