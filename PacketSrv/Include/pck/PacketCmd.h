@@ -7,16 +7,24 @@ namespace pck
 	{
 
 		// Common	---------------------------------------------------------------
-		KeepAlive = 1,						// 心跳包
-		LoginSrvRequest = 8,				// 登录服务端请求包
-		LoginSrvResult = 9,					// 登录服务端结果包
+		KeepAlive = 1,						// Keepalive 
+		LoginSrvRequest = 8,				// Login server request
+		LoginSrvResult = 9,					// Login server result
 		// Common	---------------------------------------------------------------
 
 
-		// 中心服务	---------------------------------------------------------------
-		ServerListen = 504,					// 服务器监听信息
-		ServerListenEx = 2076,				// 服务器扩展监听信息
-		// 中心服务	---------------------------------------------------------------
+
+		// Center srv	---------------------------------------------------------------
+		ServerListen = 504,					// Server listen
+		ServerListenEx = 2076,				// Server extend listen
+		// Center srv	---------------------------------------------------------------
+
+
+
+		// Game	---------------------------------------------------------------
+		StartTable = 513,					// Start table
+		StartTableResult = 517,				// Start table result
+		// Game	---------------------------------------------------------------
 
 
 		None

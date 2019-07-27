@@ -6,17 +6,25 @@
 // packet cmd vector
 const pck::EPacketCmd _vecPacketCmds[] = {
 
-	/**************  Common  *************/
+	// Common	---------------------------------------------------------------
 	pck::EPacketCmd::KeepAlive,
 	pck::EPacketCmd::LoginSrvRequest,
 	pck::EPacketCmd::LoginSrvResult,
-	/**************  Common  *************/
+	// Common	---------------------------------------------------------------
 
 
-	/**************  Center  *************/
+
+	// Center	---------------------------------------------------------------
 	pck::EPacketCmd::ServerListen,
 	pck::EPacketCmd::ServerListenEx,
-	/**************  Center  *************/
+	// Center	---------------------------------------------------------------
+
+
+
+	// Game	---------------------------------------------------------------
+	pck::EPacketCmd::StartTable,
+	pck::EPacketCmd::StartTableResult,
+	// Game	---------------------------------------------------------------
 
 
 	pck::EPacketCmd::None

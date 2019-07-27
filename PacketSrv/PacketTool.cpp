@@ -33,20 +33,25 @@ namespace pck
 
 	Packet* PacketTool::GetPacket(EPacketCmd cmd)
 	{
-		/********************************  Common  *******************************/
+		// Common	-----------------------------------------------------------------------
 		PCR_PacketPointer(KeepAlive, KeepAlivePacket)
 			PCR_PacketPointer(LoginSrvRequest, LoginSrvRequestPacket)
 			PCR_PacketPointer(LoginSrvResult, LoginSrvResultPacket)
-			/********************************  Common  *******************************/
+			// Common	-----------------------------------------------------------------------
 
 
 
-			/********************************  Cente  *******************************/
+			// Center	-----------------------------------------------------------------------
 			PCR_PacketPointer(ServerListen, LoginSrvResultPacket)
 			PCR_PacketPointer(ServerListenEx, ServerListenExPacket)
-			/********************************  Cente  *******************************/
+			// Center	-----------------------------------------------------------------------
 
 
+
+			// Game	-----------------------------------------------------------------------
+			PCR_PacketPointer(StartTable, StartTablePacket)
+			PCR_PacketPointer(StartTableResult, TableStartResultPacket)
+			// Game	-----------------------------------------------------------------------
 
 			return NULL;
 	}

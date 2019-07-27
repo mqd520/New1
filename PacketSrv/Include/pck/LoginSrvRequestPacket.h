@@ -6,34 +6,34 @@ using namespace tc;
 
 namespace pck
 {
-	// 登录服务端请求包
+	// Login server request
 	class LoginSrvRequestPacket : public Packet
 	{
 	public:
 		LoginSrvRequestPacket();
 
 	public:
-		BYTE		cbCurrentServerType;	// 当前服务类型, 1个字节
-		BYTE		cbRequestServerID;		// 请求的服务器id, 1个字节
-		BYTE		cbKeepAlive;			// 心跳值, 1个字节
-		INT32		nVersion;				// 版本, 4个字节
+		BYTE		cbCurrentServerType;	// current server type, 1 byte
+		BYTE		cbRequestServerID;		// request server Id, 1 byte
+		BYTE		cbKeepAlive;			// KeepAlive value, 1 byte
+		INT32		nVersion;				// Version, 4 byte
 		string		strGuid;				// GUID
 
 	public:
 		//************************************
-		// Method:    获取包长度(不含包头)
+		// Method:    Get packet length(Not include packet head)
 		//************************************
 		virtual int GetLen() override;
 
 		//************************************
-		// Method:    从流中读取数据到包中
-		// Parameter: ns:	只读网络流对象
+		// Method:    read data from stream
+		// Parameter: ns:	readonly stream obj
 		//************************************
 		virtual void Read(NetworkStreamRead& ns) override;
 
 		//************************************
-		// Method:    向流中写入数据
-		// Parameter: ns:	只写网络流对象
+		// Method:    write data to stream
+		// Parameter: ns:	writeonly stream obj
 		//************************************
 		virtual void Write(NetworkStreamWrite& ns) override;
 	};

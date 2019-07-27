@@ -6,15 +6,14 @@ using namespace tc;
 
 namespace pck
 {
-	// Login server result
-	class LoginSrvResultPacket : public Packet
+	// Start table
+	class StartTablePacket : public Packet
 	{
 	public:
-		LoginSrvResultPacket();
+		StartTablePacket();
 
 	public:
-		BYTE		cbVerifyCode;	// code
-		INT32		nServerID;		// server id
+		INT32 nTableId;
 
 	public:
 		//************************************
