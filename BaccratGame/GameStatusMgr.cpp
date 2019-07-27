@@ -20,7 +20,8 @@ void GameStatusMgr::Init()
 {
 	vecGS.push_back(new GS_Stop());
 
-	pCurGameStatus = vecGS[0];
+	pCurGameStatus = vecGS[0];	// default status: stop
+	pCurGameStatus->Enter();
 }
 
 void GameStatusMgr::Exit()
@@ -34,6 +35,27 @@ void GameStatusMgr::Exit()
 	vecGS.clear();
 }
 
+GameStatus* GameStatusMgr::GetGameStatus(EGameStatus status)
+{
+	GameStatus* p = NULL;
+
+	for (vector<GameStatus*>::iterator it = vecGS.begin(); it != vecGS.end(); it++)
+	{
+		if ((*it)->GetCurGameStatus() == status)
+		{
+			p = *it;
+			break;
+		}
+	}
+
+	return p;
+}
+
+void GameStatusMgr::OnStatusChange(EGameStatus oldStatus, EGameStatus newStatus)
+{
+	// ... trigger change evt
+}
+
 EGameMainStatus GameStatusMgr::GetCurGameMainStatus()
 {
 	return pCurGameStatus->GetCurGameMainStatus();
@@ -42,4 +64,37 @@ EGameMainStatus GameStatusMgr::GetCurGameMainStatus()
 EGameStatus GameStatusMgr::GetCurGameStatus()
 {
 	return pCurGameStatus->GetCurGameStatus();
+}
+
+void GameStatusMgr::ChangeStatus(EGameStatus status, bool bEvt /*= true*/)
+{
+	EGameStatus oldStatus = pCurGameStatus->GetCurGameStatus();
+	if (status != oldStatus)
+	{
+		GameStatus* p = GetGameStatus(status);
+		if (p)
+		{
+			pCurGameStatus->Leave();
+			pCurGameStatus = p;
+			pCurGameStatus->Enter();
+			if (bEvt)
+			{
+				OnStatusChange(oldStatus, status);
+			}
+		}
+	}
+}
+
+void GameStatusMgr::EnterNextStatus()
+{
+	ChangeStatus(pCurGameStatus->GetNextStatus());
+}
+
+void GameStatusMgr::StartTable()
+{
+	if (pCurGameStatus->GetCurGameMainStatus() == EGameMainStatus::Stop &&
+		pCurGameStatus->GetCurGameStatus() == EGameStatus::Stop)
+	{
+		EnterNextStatus();
+	}
 }

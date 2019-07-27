@@ -14,12 +14,21 @@ int _tmain(int argc, _TCHAR* argv[])
 
 
 
+	char ch[1024] = { 0 };
 	while (true)
 	{
-		getchar();
+		string cmd = gets_s(ch);
 
-		vector<int> vec = { 65 };
-		BaccratService::GetInstance()->GetGameSrvMgr()->CreateGameService(vec);
+		if (cmd == "101")
+		{
+			vector<int> vec = { 65 };
+			BaccratService::GetInstance()->GetGameSrvMgr()->CreateGameService(vec);
+		}
+
+		else if (cmd == "201")
+		{
+			BaccratService::GetInstance()->GetGameSrvMgr()->Get(65)->GetGameStatusMgr()->StartTable();
+		}
 	}
 
 	InitService::OnMainExit();

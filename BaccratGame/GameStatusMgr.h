@@ -17,6 +17,11 @@ private:
 	vector<GameStatus*> vecGS;		// game status obj list
 	GameStatus* pCurGameStatus;		// current game status obj
 
+private:
+	void OnStatusChange(EGameStatus oldStatus, EGameStatus newStatus);
+
+	GameStatus* GetGameStatus(EGameStatus status);
+
 public:
 	int GetTableId();
 
@@ -33,4 +38,10 @@ public:
 	EGameMainStatus GetCurGameMainStatus();
 
 	EGameStatus GetCurGameStatus();
+
+	void ChangeStatus(EGameStatus status, bool bEvt = true);
+
+	void EnterNextStatus();
+
+	void StartTable();
 };
