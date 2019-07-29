@@ -12,7 +12,7 @@
 using namespace Ryeol;
 
 
-#define MaxRecvBufLen	(8096)		// 最大接收缓冲区长度
+#define MaxRecvBufLen	(8096)		// max recv buf length
 
 
 // http header list
@@ -90,7 +90,7 @@ namespace hc
 
 				for (vector<pair<string, string>>::iterator it = info.vecParams.begin(); it != info.vecParams.end(); it++)
 				{
-					http.AddParam(it->first.c_str(), it->first.c_str());
+					http.AddParam(it->first.c_str(), it->second.c_str());
 				}
 
 				try

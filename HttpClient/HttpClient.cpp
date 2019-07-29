@@ -95,7 +95,7 @@ namespace hc
 		info.url = url;
 		info.method = "POST";
 		info.vecParams = params;
-		if (!contentType.empty())
+		if (!contentType.empty() && contentType != "application/x-www-form-urlencoded")
 		{
 			info.vecHeaders.push_back({ "Content-Type", contentType });
 		}
