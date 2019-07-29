@@ -25,8 +25,8 @@ namespace gameDef
 	{
 		Stop,						// stop
 
-		Preparse,					// prepare to start new round
-		Bet,						// bettig
+		Prepare,					// prepare to start new round
+		Bet,						// bet
 		StopBet,					// stop bet
 		Send,						// send card
 		Publish,					// publish game result
