@@ -7,6 +7,8 @@
 using namespace com;
 
 #include "json/json.h"
+#include "json/reader.h"
+#include "json/writer.h"
 using namespace Json;
 
 
@@ -153,6 +155,6 @@ namespace db
 
 	void DbService::Exit()
 	{
-
+		hc.Exit();
 	}
 }

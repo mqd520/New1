@@ -92,6 +92,8 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Include\db\ApplyGameRoundResult.h" />
+    <ClInclude Include="Include\db\ApplyGameRoundSrv.h" />
     <ClInclude Include="Include\db\DbOutputParameter.h" />
     <ClInclude Include="Include\db\DbParameter.h" />
     <ClInclude Include="Include\db\DbResult.h" />
@@ -107,6 +109,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ApplyGameRoundSrv.cpp" />
     <ClCompile Include="DbParameter.cpp" />
     <ClCompile Include="DbService.cpp" />
     <ClCompile Include="DbServiceApp.cpp" />

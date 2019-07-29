@@ -25,6 +25,12 @@
     <Filter Include="00 Def\01 Table">
       <UniqueIdentifier>{ea84fd70-1357-4db8-a7e9-0ae3d3fbe7cb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="00 Def\02 Game">
+      <UniqueIdentifier>{6b54c9b3-32c7-4392-bd91-29e21d22c9fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02 Db Service\02 Game">
+      <UniqueIdentifier>{ac6df4ac-22ee-4c22-bdcf-8ce4a2352303}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -64,6 +70,12 @@
     <ClInclude Include="Include\db\TableDataResult.h">
       <Filter>00 Def\01 Table</Filter>
     </ClInclude>
+    <ClInclude Include="Include\db\ApplyGameRoundResult.h">
+      <Filter>00 Def\02 Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\db\ApplyGameRoundSrv.h">
+      <Filter>02 Db Service\02 Game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -84,6 +96,9 @@
     <ClCompile Include="DbServiceApp.cpp" />
     <ClCompile Include="TableDataSrv.cpp">
       <Filter>02 Db Service\01 Table</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplyGameRoundSrv.cpp">
+      <Filter>02 Db Service\02 Game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -63,20 +63,6 @@ namespace db
 		vecDbParams.push_back({ name, ch });
 	}
 
-	//void DbParameter::Add(string name, SHORT val)
-	//{
-	//	char ch[10] = { 0 };
-	//	_itoa_s(val, ch, 10);
-	//	vecDbParams.push_back({ name, ch });
-	//}
-
-	//void DbParameter::Add(string name, USHORT val)
-	//{
-	//	char ch[10] = { 0 };
-	//	_itoa_s(val, ch, 10);
-	//	vecDbParams.push_back({ name, ch });
-	//}
-
 	void DbParameter::Add(string name, BYTE val)
 	{
 		char ch[10] = { 0 };
@@ -101,5 +87,12 @@ namespace db
 	void DbParameter::Add(string name, string val)
 	{
 		vecDbParams.push_back({ name, val });
+	}
+
+	void DbParameter::Add(string name, bool val)
+	{
+		char ch[10] = { 0 };
+		sprintf_s(ch, "%s", val ? "True" : "False");
+		vecDbParams.push_back({ name, ch });
 	}
 }

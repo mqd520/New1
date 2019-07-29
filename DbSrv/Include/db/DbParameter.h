@@ -31,10 +31,6 @@ namespace db
 
 		void Add(string name, UINT64 val);
 
-		//void Add(string name, SHORT val);
-
-		//void Add(string name, USHORT val);
-
 		void Add(string name, BYTE val);
 
 		void Add(string name, float val);
@@ -42,5 +38,7 @@ namespace db
 		void Add(string name, double val);
 
 		void Add(string name, string val);
+
+		void Add(string name, bool val);
 	};
 }
