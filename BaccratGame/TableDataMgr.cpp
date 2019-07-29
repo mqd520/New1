@@ -11,6 +11,7 @@ void TableDataMgr::LoadTableData()
 {
 	DbParameter param;
 	param.Add("tableId", nTableId);
+
 	dbSrv.ExecuteQuery(&param);
 }
 

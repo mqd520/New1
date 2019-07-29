@@ -98,11 +98,13 @@
     <ClInclude Include="Config.h" />
     <ClInclude Include="DbServiceSection.h" />
     <ClInclude Include="Def.h" />
+    <ClInclude Include="GameProcess.h" />
     <ClInclude Include="GameRoundService.h" />
     <ClInclude Include="GameService.h" />
     <ClInclude Include="GameServiceMgr.h" />
     <ClInclude Include="GameStatus.h" />
     <ClInclude Include="GameStatusMgr.h" />
+    <ClInclude Include="GS_Prepare.h" />
     <ClInclude Include="GS_Stop.h" />
     <ClInclude Include="InitService.h" />
     <ClInclude Include="Log.h" />
@@ -111,17 +113,20 @@
     <ClInclude Include="GameCenterService.h" />
     <ClInclude Include="GameCenterSection.h" />
     <ClInclude Include="BaccratService.h" />
+    <ClInclude Include="DealerMgr.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BaccratGame.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="DbServiceSection.cpp" />
+    <ClCompile Include="GameProcess.cpp" />
     <ClCompile Include="GameRoundService.cpp" />
     <ClCompile Include="GameService.cpp" />
     <ClCompile Include="GameServiceMgr.cpp" />
     <ClCompile Include="GameStatus.cpp" />
     <ClCompile Include="GameStatusMgr.cpp" />
+    <ClCompile Include="GS_Prepare.cpp" />
     <ClCompile Include="GS_Stop.cpp" />
     <ClCompile Include="InitService.cpp" />
     <ClCompile Include="Log.cpp" />
@@ -133,6 +138,7 @@
     <ClCompile Include="GameCenterService.cpp" />
     <ClCompile Include="GameCenterSection.cpp" />
     <ClCompile Include="BaccratService.cpp" />
+    <ClCompile Include="DealerMgr.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

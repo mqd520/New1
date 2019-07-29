@@ -2,13 +2,15 @@
 
 #include "GameStatus.h"
 
-class GS_Stop : public GameStatus
+class GS_Prepare : public GameStatus
 {
 public:
-	GS_Stop();
+	GS_Prepare();
 
 public:
 	EGameMainStatus GetCurGameMainStatus() override;
 
 	EGameStatus GetNextStatus() override;
+
+	void Enter() override;
 };

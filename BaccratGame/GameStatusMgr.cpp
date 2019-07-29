@@ -2,6 +2,7 @@
 #include "GameStatusMgr.h"
 
 #include "GS_Stop.h"
+#include "GS_Prepare.h"
 
 
 GameStatusMgr::GameStatusMgr(int nTableId) :
@@ -19,6 +20,7 @@ int GameStatusMgr::GetTableId()
 void GameStatusMgr::Init()
 {
 	vecGS.push_back(new GS_Stop());
+	vecGS.push_back(new GS_Prepare());
 
 	pCurGameStatus = vecGS[0];	// default status: stop
 	pCurGameStatus->Enter();

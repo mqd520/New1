@@ -27,7 +27,7 @@ void GameServiceMgr::Exit()
 	vecGameSrvs.clear();
 }
 
-GameService* GameServiceMgr::Get(int nTableId)
+GameService* GameServiceMgr::GetGameSrv(int nTableId)
 {
 	GameService* p = NULL;
 

@@ -30,7 +30,7 @@ public:
 	//************************************
 	// Method:    Get GameService obj
 	//************************************
-	GameService* Get(int nTableId);
+	GameService* GetGameSrv(int nTableId);
 
 	void CreateGameService(vector<int>& vecTableIds);
 };

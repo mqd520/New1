@@ -28,14 +28,20 @@
     <Filter Include="03 Service\01 Tcp Client Service">
       <UniqueIdentifier>{608b9a4b-fdb7-4c76-8b33-43a2a48ae5b3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03 Service\02 Game Service\01 Game Round">
+    <Filter Include="03 Service\02 Game Service\02 Game Round">
       <UniqueIdentifier>{da38818e-a901-4f76-8712-6a183ea95134}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03 Service\02 Game Service\02 Game Status">
+    <Filter Include="03 Service\02 Game Service\03 Game Status">
       <UniqueIdentifier>{6e94fff4-331f-4065-8afa-6fb1fe778c28}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03 Service\02 Game Service\02 Game Status\00 Sub Status">
+    <Filter Include="03 Service\02 Game Service\03 Game Status\00 Sub Status">
       <UniqueIdentifier>{2e12780c-cf86-46c3-9c8a-3e0279f322f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03 Service\02 Game Service\04 Game Process">
+      <UniqueIdentifier>{87d7fbee-24ca-4a92-86b5-76a7bab01b6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03 Service\02 Game Service\01 Dealer Mgr">
+      <UniqueIdentifier>{edb57dd8-bf4f-413f-9d2a-babb80c2fdda}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -79,16 +85,25 @@
       <Filter>02 Config\00 Section</Filter>
     </ClInclude>
     <ClInclude Include="GameRoundService.h">
-      <Filter>03 Service\02 Game Service\01 Game Round</Filter>
+      <Filter>03 Service\02 Game Service\02 Game Round</Filter>
     </ClInclude>
     <ClInclude Include="GameStatusMgr.h">
-      <Filter>03 Service\02 Game Service\02 Game Status</Filter>
+      <Filter>03 Service\02 Game Service\03 Game Status</Filter>
     </ClInclude>
     <ClInclude Include="GameStatus.h">
-      <Filter>03 Service\02 Game Service\02 Game Status</Filter>
+      <Filter>03 Service\02 Game Service\03 Game Status</Filter>
     </ClInclude>
     <ClInclude Include="GS_Stop.h">
-      <Filter>03 Service\02 Game Service\02 Game Status\00 Sub Status</Filter>
+      <Filter>03 Service\02 Game Service\03 Game Status\00 Sub Status</Filter>
+    </ClInclude>
+    <ClInclude Include="GS_Prepare.h">
+      <Filter>03 Service\02 Game Service\03 Game Status\00 Sub Status</Filter>
+    </ClInclude>
+    <ClInclude Include="GameProcess.h">
+      <Filter>03 Service\02 Game Service\04 Game Process</Filter>
+    </ClInclude>
+    <ClInclude Include="DealerMgr.h">
+      <Filter>03 Service\02 Game Service\01 Dealer Mgr</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -127,16 +142,25 @@
       <Filter>02 Config\00 Section</Filter>
     </ClCompile>
     <ClCompile Include="GameRoundService.cpp">
-      <Filter>03 Service\02 Game Service\01 Game Round</Filter>
+      <Filter>03 Service\02 Game Service\02 Game Round</Filter>
     </ClCompile>
     <ClCompile Include="GameStatusMgr.cpp">
-      <Filter>03 Service\02 Game Service\02 Game Status</Filter>
+      <Filter>03 Service\02 Game Service\03 Game Status</Filter>
     </ClCompile>
     <ClCompile Include="GameStatus.cpp">
-      <Filter>03 Service\02 Game Service\02 Game Status</Filter>
+      <Filter>03 Service\02 Game Service\03 Game Status</Filter>
     </ClCompile>
     <ClCompile Include="GS_Stop.cpp">
-      <Filter>03 Service\02 Game Service\02 Game Status\00 Sub Status</Filter>
+      <Filter>03 Service\02 Game Service\03 Game Status\00 Sub Status</Filter>
+    </ClCompile>
+    <ClCompile Include="GS_Prepare.cpp">
+      <Filter>03 Service\02 Game Service\03 Game Status\00 Sub Status</Filter>
+    </ClCompile>
+    <ClCompile Include="GameProcess.cpp">
+      <Filter>03 Service\02 Game Service\04 Game Process</Filter>
+    </ClCompile>
+    <ClCompile Include="DealerMgr.cpp">
+      <Filter>03 Service\02 Game Service\01 Dealer Mgr</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -12,7 +12,7 @@ EGameMainStatus GS_Stop::GetCurGameMainStatus()
 	return EGameMainStatus::Stop;
 }
 
-void GS_Stop::Enter()
+EGameStatus GS_Stop::GetNextStatus()
 {
-	__super::Enter();
+	return EGameStatus::Prepare;
 }

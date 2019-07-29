@@ -25,9 +25,16 @@ int _tmain(int argc, _TCHAR* argv[])
 			BaccratService::GetInstance()->GetGameSrvMgr()->CreateGameService(vec);
 		}
 
-		else if (cmd == "201")
+		else if (cmd == "201")	// dealer enter game
 		{
-			BaccratService::GetInstance()->GetGameSrvMgr()->Get(65)->GetGameStatusMgr()->StartTable();
+			GameService* pSrv = BaccratService::GetInstance()->GetGameSrvMgr()->GetGameSrv(65);
+			pSrv->GetDealerMgr()->DealerEnterGame("30001ºº×Ö");
+		}
+
+		else if (cmd == "301")	// start table
+		{
+			GameService* pSrv = BaccratService::GetInstance()->GetGameSrvMgr()->GetGameSrv(65);
+			pSrv->GetGameProcess()->StartTable();
 		}
 	}
 
