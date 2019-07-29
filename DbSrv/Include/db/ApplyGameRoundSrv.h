@@ -1,24 +1,24 @@
 #pragma once
 
 #include "DbService.h"
-#include "TableDataResult.h"
+#include "ApplyGameRoundResult.h"
 
 namespace db
 {
-	// Load table data
-	class TableDataSrv : public DbService
+	// Apply game round
+	class ApplyGameRoundSrv : public DbService
 	{
 	public:
 		//************************************
 		// Method:    constructor
 		//************************************
-		TableDataSrv();
+		ApplyGameRoundSrv();
 
 		//************************************
 		// Method:    constructor
 		// Parameter: string addr: http request addr
 		//************************************
-		TableDataSrv(string addr);
+		ApplyGameRoundSrv(string addr);
 
 	protected:
 		//************************************

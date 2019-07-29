@@ -12,7 +12,7 @@ namespace db
 	{
 	public:
 		bool bSuccess;				// whether success
-		DbOutputParameter* pParam;	// para pointer
+		DbOutputParameter* pParam;	// output para pointer
 
 	public:
 		DbResult(bool success = false) :

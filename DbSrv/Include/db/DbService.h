@@ -11,9 +11,6 @@ using namespace std;
 #include "hc/HttpClient.h"
 using namespace hc;
 
-#include "json/json.h"
-using namespace Json;
-
 
 namespace db
 {

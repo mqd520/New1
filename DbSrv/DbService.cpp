@@ -6,6 +6,9 @@
 #include "com/StringTool.h"
 using namespace com;
 
+#include "json/json.h"
+using namespace Json;
+
 
 namespace db
 {
@@ -34,12 +37,27 @@ namespace db
 
 	void DbService::OnHttpResponse(HttpClient* phc, HttpResponseData& data)
 	{
-		DbResult* pResult = ParseDbResult(data);
-		if (pResult)
-		{
-			ProcessDbResult(pResult);
+		Json::Value root;
+		Json::Reader reader;
+		reader.parse(data.bufContent, root);
 
-			delete pResult;
+		int code = root["code"].asInt();
+		if (code == 0)	// request db success
+		{
+			DbResult* pResult = ParseDbResult(data);
+			if (pResult)
+			{
+				if (pResult->bSuccess)
+				{
+					ProcessDbResult(pResult);
+				}
+
+				delete pResult;
+			}
+		}
+		else
+		{
+			DbLog::WriteLine(EDbLogType::Error, true, "request db fail, code: %d, json: %s", code, data.bufContent.c_str());
 		}
 	}
 
