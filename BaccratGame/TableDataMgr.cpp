@@ -7,7 +7,7 @@ nTableId(nTableId)
 
 }
 
-void TableDataMgr::LoadTableData()
+void TableDataMgr::LoadTables()
 {
 	DbParameter param;
 	param.Add("tableId", nTableId);
@@ -15,15 +15,16 @@ void TableDataMgr::LoadTableData()
 	dbSrv.ExecuteQuery(&param);
 }
 
-void TableDataMgr::OnDbSuccess(DbService* pSrv, DbResult* pResult)
+void TableDataMgr::OnLoadTablesCpl(DbService* pSrv, DbResult* pResult)
 {
 	TableDataResult* pResult1 = (TableDataResult*)pResult;
+	tableData = pResult1->data;
 }
 
 void TableDataMgr::Init()
 {
-	dbSrv.SetDbCallback(std::bind(&TableDataMgr::OnDbSuccess, this, _1, _2));
-	LoadTableData();
+	dbSrv.SetDbCallback(std::bind(&TableDataMgr::OnLoadTablesCpl, this, _1, _2));
+	LoadTables();
 }
 
 void TableDataMgr::Exit()
@@ -31,7 +32,14 @@ void TableDataMgr::Exit()
 	dbSrv.Exit();
 }
 
-int TableDataMgr::GetTableId()
+int TableDataMgr::GetTableId() const
 {
 	return nTableId;
+}
+
+TableData TableDataMgr::GetTableData() const
+{
+	TableData result = tableData;
+
+	return result;
 }

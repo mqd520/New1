@@ -5,11 +5,11 @@
 #include "InitService.h"
 #include "BaccratService.h"
 
+#define TableId		(65)		// Table Id
 
 int _tmain(int argc, _TCHAR* argv[])
 {
 	InitService::OnMainRun();
-
 
 
 
@@ -21,19 +21,25 @@ int _tmain(int argc, _TCHAR* argv[])
 
 		if (cmd == "101")
 		{
-			vector<int> vec = { 65 };
+			vector<int> vec = { TableId };
 			BaccratService::GetInstance()->GetGameSrvMgr()->CreateGameService(vec);
+		}
+		else if (cmd == "102")
+		{
+			GameService* pSrv = BaccratService::GetInstance()->GetGameSrvMgr()->GetGameSrv(TableId);
+			TableData result = pSrv->GetTableDataMgr()->GetTableData();
+			result.nId = 1;
 		}
 
 		else if (cmd == "201")	// dealer enter game
 		{
-			GameService* pSrv = BaccratService::GetInstance()->GetGameSrvMgr()->GetGameSrv(65);
+			GameService* pSrv = BaccratService::GetInstance()->GetGameSrvMgr()->GetGameSrv(TableId);
 			pSrv->GetDealerMgr()->DealerEnterGame("30001ºº×Ö");
 		}
 
 		else if (cmd == "301")	// start table
 		{
-			GameService* pSrv = BaccratService::GetInstance()->GetGameSrvMgr()->GetGameSrv(65);
+			GameService* pSrv = BaccratService::GetInstance()->GetGameSrvMgr()->GetGameSrv(TableId);
 			pSrv->GetGameProcess()->StartTable();
 		}
 	}

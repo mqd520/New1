@@ -14,13 +14,22 @@ public:
 	TableDataMgr(int nTableId);
 
 private:
-	int nTableId;			// table Id
-	TableDataSrv dbSrv;		// db srv
+	int nTableId;				// table Id
+	TableDataSrv dbSrv;			// db srv
+	TableData tableData;		// table data
 
 private:
-	void LoadTableData();
+	//************************************
+	// Method:    Load Table list
+	//************************************
+	void LoadTables();
 
-	void OnDbSuccess(DbService* pSrv, DbResult* pResult);
+	//************************************
+	// Method:    Load tables complete
+	// Parameter: DbService * pSrv
+	// Parameter: DbResult * pResult
+	//************************************
+	void OnLoadTablesCpl(DbService* pSrv, DbResult* pResult);
 
 public:
 	//************************************
@@ -36,5 +45,10 @@ public:
 	//************************************
 	// Method:    Get table Id
 	//************************************
-	int GetTableId();
+	int GetTableId() const;
+
+	//************************************
+	// Method:    Get table data
+	//************************************
+	TableData GetTableData() const;
 };
