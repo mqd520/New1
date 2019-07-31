@@ -100,11 +100,14 @@
     <ClInclude Include="Include\db\DbService.h" />
     <ClInclude Include="Include\db\DbServiceApp.h" />
     <ClInclude Include="Include\db\Def.h" />
+    <ClInclude Include="Include\db\TableData.h" />
     <ClInclude Include="Include\db\TableDataResult.h" />
     <ClInclude Include="Include\db\Log.h" />
     <ClInclude Include="Include\db\PlayerLoginResult.h" />
     <ClInclude Include="Include\db\PlayerLoginSrv.h" />
+    <ClInclude Include="Include\db\TableDataResult2.h" />
     <ClInclude Include="Include\db\TableDataSrv.h" />
+    <ClInclude Include="Include\db\TableDataSrv2.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -120,6 +123,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="TableDataSrv.cpp" />
+    <ClCompile Include="TableDataSrv2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

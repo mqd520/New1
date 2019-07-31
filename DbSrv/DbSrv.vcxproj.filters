@@ -64,9 +64,6 @@
     <ClInclude Include="Include\db\PlayerLoginResult.h">
       <Filter>00 Def\00 Player</Filter>
     </ClInclude>
-    <ClInclude Include="Include\db\TableDataSrv.h">
-      <Filter>02 Db Service\01 Table</Filter>
-    </ClInclude>
     <ClInclude Include="Include\db\TableDataResult.h">
       <Filter>00 Def\01 Table</Filter>
     </ClInclude>
@@ -75,6 +72,18 @@
     </ClInclude>
     <ClInclude Include="Include\db\ApplyGameRoundSrv.h">
       <Filter>02 Db Service\02 Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\db\TableDataResult2.h">
+      <Filter>00 Def\01 Table</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\db\TableDataSrv.h">
+      <Filter>02 Db Service\01 Table</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\db\TableDataSrv2.h">
+      <Filter>02 Db Service\01 Table</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\db\TableData.h">
+      <Filter>00 Def\01 Table</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -94,11 +103,14 @@
       <Filter>01 Log</Filter>
     </ClCompile>
     <ClCompile Include="DbServiceApp.cpp" />
+    <ClCompile Include="ApplyGameRoundSrv.cpp">
+      <Filter>02 Db Service\02 Game</Filter>
+    </ClCompile>
     <ClCompile Include="TableDataSrv.cpp">
       <Filter>02 Db Service\01 Table</Filter>
     </ClCompile>
-    <ClCompile Include="ApplyGameRoundSrv.cpp">
-      <Filter>02 Db Service\02 Game</Filter>
+    <ClCompile Include="TableDataSrv2.cpp">
+      <Filter>02 Db Service\01 Table</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
