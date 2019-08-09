@@ -3,6 +3,8 @@
 #include <string>
 using namespace std;
 
+class GameService;
+
 
 // Game dealer mgr
 class DealerMgr
@@ -13,6 +15,9 @@ public:
 private:
 	int nTableId;				// table Id
 	string strDealerNo;			// dealer no
+
+private:
+	GameService* pGameSrv;		// game service obj
 
 public:
 	//************************************
@@ -28,17 +33,23 @@ public:
 	//************************************
 	// Method:    Get Table Id
 	//************************************
-	int GetTableId();
+	int GetTableId() const;
+
+	//************************************
+	// Method:    Attach game service
+	// Parameter: GameService * pSrv
+	//************************************
+	void AttachGameService(GameService* pSrv);
 
 	//************************************
 	// Method:    Has dealer
 	//************************************
-	bool hasDealer();
+	bool hasDealer() const;
 
 	//************************************
 	// Method:    Get dealer no
 	//************************************
-	string GetDealerNo();
+	string GetDealerNo() const;
 
 	//************************************
 	// Method:    Dealer enter game

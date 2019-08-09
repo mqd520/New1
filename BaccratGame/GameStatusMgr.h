@@ -23,8 +23,6 @@ private:
 	GameStatus* GetGameStatus(EGameStatus status);
 
 public:
-	int GetTableId();
-
 	//************************************
 	// Method:    Init
 	//************************************
@@ -35,13 +33,32 @@ public:
 	//************************************
 	void Exit();
 
-	EGameMainStatus GetCurGameMainStatus();
+	//************************************
+	// Method:    Get table Id
+	//************************************
+	int GetTableId() const;
 
-	EGameStatus GetCurGameStatus();
+	//************************************
+	// Method:    Get current game main status
+	//************************************
+	EGameMainStatus GetCurGameMainStatus() const;
 
-	void ChangeStatus(EGameStatus status, bool bEvt = true);
+	//************************************
+	// Method:    Get current game status
+	//************************************
+	EGameStatus GetCurGameStatus() const;
 
-	void EnterNextStatus();
+	//************************************
+	// Method:    Change game status
+	// Parameter: bForce: whether force change status
+	// Parameter: bEvt:	  whether build evt
+	//************************************
+	void ChangeStatus(EGameStatus status, bool bForce = false, bool bEvt = true);
 
-	void StartTable();
+	//************************************
+	// Method:    Enter next status
+	// Parameter: bForce: whether force enter next status
+	// Parameter: bEvt:	  whether build evt
+	//************************************
+	void EnterNextStatus(bool bForce = false, bool bEvt = true);
 };

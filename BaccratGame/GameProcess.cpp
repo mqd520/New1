@@ -1,58 +1,51 @@
 #include "stdafx.h"
 #include "GameProcess.h"
 #include "GameService.h"
+#include "Log.h"
 
-#include "com/StringTool.h"
-using namespace com;
+#include "game/ApplyGameRoundCplEvt.h"
+using namespace game;
 
 
 GameProcess::GameProcess(int nTableId) :
 nTableId(nTableId),
-nDuplicateId(1),
-bNeedChangeXue(false)
+pGameSrv(nullptr)
 {
-
+	
 }
 
-void GameProcess::ApplyGameRound()
+void GameProcess::OnApplyGameRoundCpl(GameEvt* pEvt, void* pObj)
 {
-	DbParameter param;
-	param.Add("TableId", nTableId);
-	param.Add("DuplicateId", nDuplicateId);
-	param.Add("IsNewXue", bNeedChangeXue);
-	string dealerNo = pSrv->GetDealerMgr()->GetDealerNo();
-	param.Add("DealerNo", StringTool::GB2312_2_UTF8((char*)dealerNo.c_str()));
-
-	appGameRoundSrv.ExecuteQuery(&param);
-}
-
-void GameProcess::OnApplyGameRoundCpl(DbService* pSrv, DbResult* pResult)
-{
-	ApplyGameRoundResult* pResult1 = (ApplyGameRoundResult*)pResult;
-	printf("Game round Id = %d \n", pResult1->nGameRoundId);
+	ApplyGameRoundCplEvt* pEvt1 = (ApplyGameRoundCplEvt*)pEvt;
+	if (pEvt1->IsSuccessed())
+	{
+		pGameSrv->GetGameStatusMgr()->EnterNextStatus();
+	}
 }
 
 void GameProcess::Init()
 {
-	appGameRoundSrv.SetDbCallback(std::bind(&GameProcess::OnApplyGameRoundCpl, this, _1, _2));
+	pGameSrv->GetGameRoundSrv()->RegGameEvt(EGameEvtType::ApplyGameRoundCpl,
+		std::bind(&GameProcess::OnApplyGameRoundCpl, this, _1, _2));
 }
 
 void GameProcess::Exit()
 {
-	appGameRoundSrv.Exit();
+
 }
 
 void GameProcess::AttachGameService(GameService* pSrv)
 {
-	this->pSrv = pSrv;
+	this->pGameSrv = pSrv;
 }
 
-int GameProcess::GetTableId()
+int GameProcess::GetTableId() const
 {
 	return nTableId;
 }
 
 void GameProcess::StartTable()
 {
-	ApplyGameRound();
+	pGameSrv->GetGameRoundSrv()->ApplyNewRound();
+	pGameSrv->GetGameStatusMgr()->ChangeStatus(EGameStatus::Prepare);
 }

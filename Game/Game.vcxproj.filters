@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="99 Other">
+      <UniqueIdentifier>{4421a0a6-e7f6-4821-b162-c571c6cea01a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00 Def">
+      <UniqueIdentifier>{c3845814-3d74-4595-875c-39e317a3dede}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01 Common">
+      <UniqueIdentifier>{44419f13-ef9e-4831-b95b-e5a0798bb438}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02 GameEvt">
+      <UniqueIdentifier>{5a2bdeab-7271-465c-ab56-5d55b2ad3085}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02 GameEvt\00 Sub Evt">
+      <UniqueIdentifier>{25d8ccc3-505b-4fc5-a26a-256b01a2c206}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>99 Other</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>99 Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Game\TableDef.h">
+      <Filter>00 Def</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\game\GameDef.h">
+      <Filter>00 Def</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\game\GameEvt.h">
+      <Filter>02 GameEvt</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\game\GameEvtReg.h">
+      <Filter>02 GameEvt</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\game\ApplyGameRoundCplEvt.h">
+      <Filter>02 GameEvt\00 Sub Evt</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\game\ApplyGameRoundEvt.h">
+      <Filter>02 GameEvt\00 Sub Evt</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\game\CountDown.h">
+      <Filter>01 Common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt">
+      <Filter>99 Other</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>99 Other</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEvt.cpp">
+      <Filter>02 GameEvt</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEvtReg.cpp">
+      <Filter>02 GameEvt</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplyGameRoundCplEvt.cpp">
+      <Filter>02 GameEvt\00 Sub Evt</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplyGameRoundEvt.cpp">
+      <Filter>02 GameEvt\00 Sub Evt</Filter>
+    </ClCompile>
+    <ClCompile Include="CountDown.cpp">
+      <Filter>01 Common</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

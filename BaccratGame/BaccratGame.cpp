@@ -19,7 +19,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	{
 		string cmd = gets_s(ch);
 
-		if (cmd == "101")
+		if (cmd == "101")	// init table
 		{
 			vector<int> vec = { TableId };
 			BaccratService::GetInstance()->GetGameSrvMgr()->CreateGameService(vec);

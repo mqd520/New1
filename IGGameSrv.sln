@@ -27,7 +27,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PlazaServer", "PlazaServer\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BaccratGame", "BaccratGame\BaccratGame.vcxproj", "{1DAED1F1-2D16-4AA9-B60C-88B5F1A60B7C}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameDef", "GameDef\GameDef.vcxproj", "{93DB35FF-0818-451B-9980-0BF990C82D1E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Game", "Game\Game.vcxproj", "{93DB35FF-0818-451B-9980-0BF990C82D1E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Packet Lib", "01 Packet Lib", "{D9B8F1A2-E305-478B-96FC-C23171BDD590}"
 EndProject

@@ -61,8 +61,8 @@ void GameServiceMgr::CreateGameService(vector<int>& vecTableIds)
 		if (!b)
 		{
 			GameService* p = new GameService(*it);
-			p->Init();
 			vecGameSrvs.push_back(p);
+			p->Init();
 		}
 	}
 }

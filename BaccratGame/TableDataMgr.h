@@ -6,6 +6,8 @@ using namespace std;
 #include "db/TableDataSrv.h"
 using namespace db;
 
+class GameService;
+
 
 // Table data mgr
 class TableDataMgr
@@ -19,11 +21,15 @@ private:
 	TableData tableData;		// table data
 
 private:
+	GameService* pGameSrv;		// game service obj
+
+private:
 	//************************************
 	// Method:    Load Table list
 	//************************************
 	void LoadTables();
 
+private:
 	//************************************
 	// Method:    Load tables complete
 	// Parameter: DbService * pSrv
@@ -46,6 +52,12 @@ public:
 	// Method:    Get table Id
 	//************************************
 	int GetTableId() const;
+
+	//************************************
+	// Method:    Attach game service
+	// Parameter: GameService * pSrv
+	//************************************
+	void AttachGameService(GameService* pSrv);
 
 	//************************************
 	// Method:    Get table data

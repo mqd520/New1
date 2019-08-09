@@ -3,6 +3,9 @@
 #include "db/ApplyGameRoundSrv.h"
 using namespace db;
 
+#include "game/GameEvt.h"
+using namespace game;
+
 class GameService;
 
 
@@ -13,27 +16,19 @@ public:
 	GameProcess(int nTableId);
 
 private:
-	int nTableId;			// table Id
-	GameService* pSrv;		// game service obj
-	int nDuplicateId;		// duplicate Id
-	bool bNeedChangeXue;	// whether need change xue
+	int nTableId;				// table Id
+	GameService* pGameSrv;		// game service obj
 
 private:
 	ApplyGameRoundSrv appGameRoundSrv;	// ApplyGameRoundSrv obj
 
 private:
 	//************************************
-	// Method:    Apply game round
+	// Method:    Apply game round cpl evt
+	// Parameter: pEvt: Game evt
+	// Parameter: pObj: attach obj
 	//************************************
-	void ApplyGameRound();
-
-private:
-	//************************************
-	// Method:    Apply game round complete
-	// Parameter: DbService * pSrv
-	// Parameter: DbResult * pResult
-	//************************************
-	void OnApplyGameRoundCpl(DbService* pSrv, DbResult* pResult);
+	void OnApplyGameRoundCpl(GameEvt* pEvt, void* pObj);
 
 public:
 	//************************************
@@ -55,7 +50,7 @@ public:
 	//************************************
 	// Method:    Get Table Id
 	//************************************
-	int GetTableId();
+	int GetTableId() const;
 
 	//************************************
 	// Method:    Start table

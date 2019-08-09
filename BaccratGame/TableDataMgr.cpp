@@ -1,5 +1,7 @@
 #include "stdafx.h"
 #include "TableDataMgr.h"
+#include "GameService.h"
+
 
 TableDataMgr::TableDataMgr(int nTableId) :
 nTableId(nTableId)
@@ -35,6 +37,11 @@ void TableDataMgr::Exit()
 int TableDataMgr::GetTableId() const
 {
 	return nTableId;
+}
+
+void TableDataMgr::AttachGameService(GameService* pSrv)
+{
+	this->pGameSrv = pSrv;
 }
 
 TableData TableDataMgr::GetTableData() const

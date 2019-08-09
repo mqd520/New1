@@ -12,26 +12,26 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>99 Other</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>99 Other</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\gameDef\TableDef.h">
+    <ClInclude Include="..\Game\Include\game\TableDef.h">
       <Filter>01 Table</Filter>
     </ClInclude>
-    <ClInclude Include="Include\gameDef\GameDef.h">
+    <ClInclude Include="..\Game\Include\game\GameDef.h">
       <Filter>02 Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\stdafx.h">
+      <Filter>99 Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\targetver.h">
+      <Filter>99 Other</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt">
+    <Text Include="..\Game\ReadMe.txt">
       <Filter>99 Other</Filter>
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
+    <ClCompile Include="..\Game\stdafx.cpp">
       <Filter>99 Other</Filter>
     </ClCompile>
   </ItemGroup>

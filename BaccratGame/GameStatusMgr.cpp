@@ -7,34 +7,9 @@
 
 GameStatusMgr::GameStatusMgr(int nTableId) :
 nTableId(nTableId),
-pCurGameStatus(NULL)
+pCurGameStatus(nullptr)
 {
 
-}
-
-int GameStatusMgr::GetTableId()
-{
-	return nTableId;
-}
-
-void GameStatusMgr::Init()
-{
-	vecGS.push_back(new GS_Stop());
-	vecGS.push_back(new GS_Prepare());
-
-	pCurGameStatus = vecGS[0];	// default status: stop
-	pCurGameStatus->Enter();
-}
-
-void GameStatusMgr::Exit()
-{
-	for (vector<GameStatus*>::iterator it = vecGS.begin(); it != vecGS.end(); it++)
-	{
-		(*it)->Exit();
-		delete (*it);
-	}
-
-	vecGS.clear();
 }
 
 GameStatus* GameStatusMgr::GetGameStatus(EGameStatus status)
@@ -58,45 +33,65 @@ void GameStatusMgr::OnStatusChange(EGameStatus oldStatus, EGameStatus newStatus)
 	// ... trigger change evt
 }
 
-EGameMainStatus GameStatusMgr::GetCurGameMainStatus()
+void GameStatusMgr::Init()
+{
+	vecGS.push_back(new GS_Stop());
+	vecGS.push_back(new GS_Prepare());
+
+	pCurGameStatus = vecGS[0];	// default status: stop
+	pCurGameStatus->Enter();
+}
+
+void GameStatusMgr::Exit()
+{
+	for (vector<GameStatus*>::iterator it = vecGS.begin(); it != vecGS.end(); it++)
+	{
+		(*it)->Exit();
+		delete (*it);
+	}
+
+	vecGS.clear();
+}
+
+int GameStatusMgr::GetTableId() const
+{
+	return nTableId;
+}
+
+EGameMainStatus GameStatusMgr::GetCurGameMainStatus() const
 {
 	return pCurGameStatus->GetCurGameMainStatus();
 }
 
-EGameStatus GameStatusMgr::GetCurGameStatus()
+EGameStatus GameStatusMgr::GetCurGameStatus() const
 {
 	return pCurGameStatus->GetCurGameStatus();
 }
 
-void GameStatusMgr::ChangeStatus(EGameStatus status, bool bEvt /*= true*/)
+void GameStatusMgr::ChangeStatus(EGameStatus status, bool bForce /*= false*/, bool bEvt /*= true*/)
 {
-	EGameStatus oldStatus = pCurGameStatus->GetCurGameStatus();
-	if (status != oldStatus)
+	bool bChange = bForce ? true : pCurGameStatus && pCurGameStatus->IsCompleted();		// whether change status
+	if (bChange)
 	{
-		GameStatus* p = GetGameStatus(status);
-		if (p)
+		EGameStatus oldStatus = pCurGameStatus->GetCurGameStatus();
+		if (status != oldStatus)
 		{
-			pCurGameStatus->Leave();
-			pCurGameStatus = p;
-			pCurGameStatus->Enter();
-			if (bEvt)
+			GameStatus* p = GetGameStatus(status);
+			if (p)
 			{
-				OnStatusChange(oldStatus, status);
+				pCurGameStatus->Leave();
+				pCurGameStatus = p;
+				pCurGameStatus->Enter();
+				if (bEvt)
+				{
+					OnStatusChange(oldStatus, status);
+				}
 			}
 		}
 	}
 }
 
-void GameStatusMgr::EnterNextStatus()
+void GameStatusMgr::EnterNextStatus(bool bForce /*= false*/, bool bEvt /*= true*/)
 {
-	ChangeStatus(pCurGameStatus->GetNextStatus());
-}
-
-void GameStatusMgr::StartTable()
-{
-	if (pCurGameStatus->GetCurGameMainStatus() == EGameMainStatus::Stop &&
-		pCurGameStatus->GetCurGameStatus() == EGameStatus::Stop)
-	{
-		EnterNextStatus();
-	}
+	ChangeStatus(pCurGameStatus->GetNextStatus(), bForce, bEvt);
 }

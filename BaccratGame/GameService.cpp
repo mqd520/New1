@@ -6,7 +6,7 @@ tableDataMgr(nTableId),
 dealerMgr(nTableId),
 gameRoundSrv(nTableId),
 gameStatusMgr(nTableId),
-game(nTableId),
+gamePro(nTableId),
 
 nTableId(nTableId)
 {
@@ -17,11 +17,14 @@ void GameService::Init()
 {
 	tableDataMgr.Init();
 	dealerMgr.Init();
+
+	gameRoundSrv.AttachGameService(this);
 	gameRoundSrv.Init();
+	
 	gameStatusMgr.Init();
 
-	game.Init();
-	game.AttachGameService(this);
+	gamePro.AttachGameService(this);
+	gamePro.Init();
 }
 
 void GameService::Exit()
@@ -30,7 +33,7 @@ void GameService::Exit()
 	dealerMgr.Exit();
 	gameRoundSrv.Exit();
 	gameStatusMgr.Exit();
-	game.Exit();
+	gamePro.Exit();
 }
 
 int GameService::GetTableId()
@@ -55,7 +58,7 @@ GameStatusMgr* GameService::GetGameStatusMgr()
 
 GameProcess* GameService::GetGameProcess()
 {
-	return &game;
+	return &gamePro;
 }
 
 DealerMgr* GameService::GetDealerMgr()

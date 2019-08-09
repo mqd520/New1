@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "GS_Prepare.h"
 
-GS_Prepare::GS_Prepare() :
-GameStatus(EGameStatus::Prepare)
+GS_Prepare::GS_Prepare(int nDurationTime) :
+GameStatus(EGameStatus::Prepare, nDurationTime)
 {
 
 }
@@ -19,5 +19,10 @@ EGameStatus GS_Prepare::GetNextStatus()
 
 void GS_Prepare::Enter()
 {
+	StartCountdown();
+}
 
+bool GS_Prepare::IsCompleted()
+{
+	return IsCountdownDone();
 }

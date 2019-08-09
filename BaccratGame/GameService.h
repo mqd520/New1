@@ -19,7 +19,7 @@ private:
 	DealerMgr dealerMgr;					// dealer mgr obj 
 	GameRoundService gameRoundSrv;			// GameRoundDataService obj
 	GameStatusMgr gameStatusMgr;			// game status mgr
-	GameProcess game;						// game process
+	GameProcess gamePro;					// game process
 
 public:
 	//************************************

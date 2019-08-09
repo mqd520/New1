@@ -1,6 +1,6 @@
 #pragma once
 
-namespace gameDef
+namespace game
 {
 
 }

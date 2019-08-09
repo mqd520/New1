@@ -11,19 +11,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{1DAED1F1-2D16-4AA9-B60C-88B5F1A60B7C}</ProjectGuid>
+    <ProjectGuid>{93DB35FF-0818-451B-9980-0BF990C82D1E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>BaccratGame</RootNamespace>
+    <RootNamespace>Game</RootNamespace>
+    <ProjectName>Game</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -40,12 +41,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>true</LinkIncremental>
     <OutDir>bin\$(Configuration)\</OutDir>
     <IntDir>obj\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LinkIncremental>false</LinkIncremental>
     <OutDir>bin\$(Configuration)\</OutDir>
     <IntDir>obj\$(Configuration)\</IntDir>
   </PropertyGroup>
@@ -54,19 +53,14 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../Lib/log/Include/;../Lib/tc/Include/;../Common/Include/;../Ryeol/Include/;../Json/Include/;../HttpClient/Include/;../Game/Include/;../DbSrv/Include/;../PacketSrv/Include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Lib/tc/Include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>../Lib/log/;../Lib/tc/;../Common/$(OutDir)/;../Ryeol/$(OutDir)/;../Json/$(OutDir)/;../HttpClient/$(OutDir)/;../PacketSrv/$(OutDir)/;../DbSrv/$(OutDir)/;../Game/$(OutDir)/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>log_d.lib;TcpCommucation_d.lib;Common.lib;Ryeol.lib;Json.lib;HttpClient.lib;Game.lib;DbSrv.lib;PacketSrv.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
-    <PostBuildEvent>
-      <Command>copy "$(ProjectDir)Runtime requirement\*.*" "$(ProjectDir)$(OutDir)"</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -75,70 +69,41 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../Lib/log/Include/;../Lib/tc/Include/;../Common/Include/;../Ryeol/Include/;../Json/Include/;../HttpClient/Include/;../Game/Include/;../DbSrv/Include/;../PacketSrv/Include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Lib/tc/Include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>../Lib/log/;../Lib/tc/;../Common/$(OutDir)/;../Ryeol/$(OutDir)/;../Json/$(OutDir)/;../HttpClient/$(OutDir)/;../PacketSrv/$(OutDir)/;../DbSrv/$(OutDir)/;../Game/$(OutDir)/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>log.lib;TcpCommucation.lib;Common.lib;Ryeol.lib;Json.lib;HttpClient.lib;Game.lib;DbSrv.lib;PacketSrv.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
-    <PostBuildEvent>
-      <Command>copy "$(ProjectDir)Runtime requirement\*.*" "$(ProjectDir)$(OutDir)"</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Config.h" />
-    <ClInclude Include="DbServiceSection.h" />
-    <ClInclude Include="Def.h" />
-    <ClInclude Include="GameProcess.h" />
-    <ClInclude Include="GameRoundService.h" />
-    <ClInclude Include="GameService.h" />
-    <ClInclude Include="GameServiceMgr.h" />
-    <ClInclude Include="GameStatus.h" />
-    <ClInclude Include="GameStatusMgr.h" />
-    <ClInclude Include="GS_Prepare.h" />
-    <ClInclude Include="GS_Stop.h" />
-    <ClInclude Include="InitService.h" />
-    <ClInclude Include="Log.h" />
+    <ClInclude Include="Include\game\ApplyGameRoundCplEvt.h" />
+    <ClInclude Include="Include\game\ApplyGameRoundEvt.h" />
+    <ClInclude Include="Include\game\CountDown.h" />
+    <ClInclude Include="Include\game\GameDef.h" />
+    <ClInclude Include="Include\game\GameEvt.h" />
+    <ClInclude Include="Include\game\GameEvtReg.h" />
+    <ClInclude Include="Include\Game\TableDef.h" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="TableDataMgr.h" />
-    <ClInclude Include="GameCenterService.h" />
-    <ClInclude Include="GameCenterSection.h" />
-    <ClInclude Include="BaccratService.h" />
-    <ClInclude Include="DealerMgr.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BaccratGame.cpp" />
-    <ClCompile Include="Config.cpp" />
-    <ClCompile Include="DbServiceSection.cpp" />
-    <ClCompile Include="GameProcess.cpp" />
-    <ClCompile Include="GameRoundService.cpp" />
-    <ClCompile Include="GameService.cpp" />
-    <ClCompile Include="GameServiceMgr.cpp" />
-    <ClCompile Include="GameStatus.cpp" />
-    <ClCompile Include="GameStatusMgr.cpp" />
-    <ClCompile Include="GS_Prepare.cpp" />
-    <ClCompile Include="GS_Stop.cpp" />
-    <ClCompile Include="InitService.cpp" />
-    <ClCompile Include="Log.cpp" />
+    <ClCompile Include="ApplyGameRoundCplEvt.cpp" />
+    <ClCompile Include="ApplyGameRoundEvt.cpp" />
+    <ClCompile Include="CountDown.cpp" />
+    <ClCompile Include="GameEvt.cpp" />
+    <ClCompile Include="GameEvtReg.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="TableDataMgr.cpp" />
-    <ClCompile Include="GameCenterService.cpp" />
-    <ClCompile Include="GameCenterSection.cpp" />
-    <ClCompile Include="BaccratService.cpp" />
-    <ClCompile Include="DealerMgr.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

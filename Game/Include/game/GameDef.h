@@ -1,6 +1,6 @@
 #pragma once
 
-namespace gameDef
+namespace game
 {
 	// Game type
 	enum class EGameType
@@ -33,5 +33,14 @@ namespace gameDef
 		Settle,						// settle
 
 		None,						// None(Invalid)
+	};
+
+	// Game evt type
+	enum class EGameEvtType
+	{
+		ApplyGameRound = 100,		// Apply game round
+		ApplyGameRoundCpl,			// Apply game round complete
+
+		None
 	};
 }
