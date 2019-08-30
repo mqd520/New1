@@ -2,17 +2,17 @@
 #include "GS_Stop.h"
 
 GS_Stop::GS_Stop() :
-GameStatus(EGameStatus::Stop)
+GameStatus(EGameStatus::Stop, false, 0)
 {
 
 }
 
-EGameMainStatus GS_Stop::GetCurGameMainStatus()
+EGameMainStatus GS_Stop::GetCurGameMainStatus() const
 {
 	return EGameMainStatus::Stop;
 }
 
-EGameStatus GS_Stop::GetNextStatus()
+EGameStatus GS_Stop::GetNextStatus() const
 {
 	return EGameStatus::Prepare;
 }

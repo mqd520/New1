@@ -10,9 +10,11 @@ using namespace tc;
 
 namespace game
 {
+	class CountDown;
+
 	// void*:	CountDown *
 	// void*:	void *
-	using CountdownCallback = std::function<void(void*, void*)>;
+	using CountdownCallback = std::function < void(CountDown*, void*) >;
 
 
 	// Countdown
@@ -109,7 +111,7 @@ namespace game
 
 		//************************************
 		// Method:    Reg countdown done evt
-		// Parameter: void* pObj
+		// Parameter: CountdownCallback fn
 		//************************************
 		void RegDoneEvt(CountdownCallback fn);
 	};

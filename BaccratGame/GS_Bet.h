@@ -2,12 +2,16 @@
 
 #include "GameStatus.h"
 
-
-// Stop status
-class GS_Stop : public GameStatus
+// Bet status
+class GS_Bet : public GameStatus
 {
 public:
-	GS_Stop();
+	//************************************
+	// Method:    Constructor
+	// Parameter: bool isAutoEnterNext:	whether auto enter next status
+	// Parameter: int nDurationTime: total time
+	//************************************
+	GS_Bet(bool isAutoEnterNext, int nDurationTime);
 
 public:
 	//************************************

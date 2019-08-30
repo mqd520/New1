@@ -2,6 +2,7 @@
 
 #include "GameCenterSection.h"
 #include "DbServiceSection.h"
+#include "TableSection.h"
 
 
 // config
@@ -16,6 +17,7 @@ private:
 public:
 	const GameCenterSection gamecenter;		// game center Section
 	const DbServiceSection dbSrv;			// db service section
+	const TableSection table;				// table section
 
 public:
 	//************************************

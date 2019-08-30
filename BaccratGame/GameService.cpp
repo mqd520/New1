@@ -1,7 +1,11 @@
 #include "stdafx.h"
 #include "GameService.h"
+#include "BaccratService.h"
+
 
 GameService::GameService(int nTableId) :
+pBaccratSrv(nullptr),
+
 tableDataMgr(nTableId),
 dealerMgr(nTableId),
 gameRoundSrv(nTableId),
@@ -13,14 +17,24 @@ nTableId(nTableId)
 
 }
 
+void GameService::OnLoadTableDataSuccess(TableDataMgr* pTableDataMgr, TableData& table)
+{
+	
+}
+
 void GameService::Init()
 {
+	pBaccratSrv = BaccratService::GetInstance();
+
+	tableDataMgr.AttachGameService(this);
 	tableDataMgr.Init();
+
 	dealerMgr.Init();
 
 	gameRoundSrv.AttachGameService(this);
 	gameRoundSrv.Init();
 	
+	gameStatusMgr.AttachGameService(this);
 	gameStatusMgr.Init();
 
 	gamePro.AttachGameService(this);
@@ -39,6 +53,11 @@ void GameService::Exit()
 int GameService::GetTableId()
 {
 	return nTableId;
+}
+
+void GameService::SendPck_2_GameCenter()
+{
+	// send pck
 }
 
 TableDataMgr* GameService::GetTableDataMgr()

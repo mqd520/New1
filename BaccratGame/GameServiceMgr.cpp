@@ -13,7 +13,7 @@ GameServiceMgr::~GameServiceMgr()
 
 void GameServiceMgr::Init()
 {
-
+	
 }
 
 void GameServiceMgr::Exit()
@@ -43,7 +43,7 @@ GameService* GameServiceMgr::GetGameSrv(int nTableId)
 	return p;
 }
 
-void GameServiceMgr::CreateGameService(vector<int>& vecTableIds)
+void GameServiceMgr::CreateGameService(vector<int> vecTableIds)
 {
 	for (vector<int>::iterator it = vecTableIds.begin(); it != vecTableIds.end(); it++)
 	{

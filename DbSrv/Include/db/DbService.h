@@ -16,8 +16,11 @@ namespace db
 {
 	class DbService;
 
-	// db execute success callback fn
-	typedef std::function<void(DbService*, DbResult*)> DbExecuteSuccessCallback;
+	// db execute complete callback fn
+	// DbService*:	DbService *
+	// DbResult*:	DbResult *
+	typedef std::function<void(DbService*, DbResult*)> DbExecuteCplCallback;
+
 
 	// database service
 	class DbService
@@ -42,9 +45,9 @@ namespace db
 		virtual ~DbService();
 
 	protected:
-		string strAddr;			// http request addr
-		HttpClient hc;			// http client obj
-		DbExecuteSuccessCallback fn;	// db execute success callback fn
+		string strAddr;				// http request addr
+		HttpClient hc;				// http client obj
+		DbExecuteCplCallback fn;	// db execute complete callback fn
 
 	protected:
 		//************************************
@@ -94,7 +97,7 @@ namespace db
 		// Method:    set db execute success callback fn
 		// Parameter: DbExecuteSuccessCallback fn
 		//************************************
-		void SetDbCallback(DbExecuteSuccessCallback fn);
+		void SetDbCallback(DbExecuteCplCallback fn);
 
 		//************************************
 		// Method:    execute db request

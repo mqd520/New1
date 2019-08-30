@@ -43,29 +43,29 @@ namespace db
 		Json::Reader reader;
 		reader.parse(data.bufContent, root);
 
+		DbResult* pResult = nullptr;
+
 		int code = root["code"].asInt();
 		if (code == 0)	// request db success
 		{
-			DbResult* pResult = ParseDbResult(data);
-			if (pResult)
-			{
-				if (pResult->bSuccess)
-				{
-					ProcessDbResult(pResult);
-				}
-
-				delete pResult;
-			}
+			pResult = ParseDbResult(data);
 		}
 		else
 		{
 			DbLog::WriteLine(EDbLogType::Error, true, "request db fail, code: %d, json: %s", code, data.bufContent.c_str());
 		}
+
+		ProcessDbResult(pResult);
+
+		if (pResult)
+		{
+			delete pResult;
+		}
 	}
 
 	DbResult* DbService::ParseDbResult(HttpResponseData& data)
 	{
-		return NULL;
+		return nullptr;
 	}
 
 	void DbService::ProcessDbResult(DbResult* pResult)
@@ -111,7 +111,7 @@ namespace db
 		hc.ResetUrl(addr);
 	}
 
-	void DbService::SetDbCallback(DbExecuteSuccessCallback fn)
+	void DbService::SetDbCallback(DbExecuteCplCallback fn)
 	{
 		this->fn = fn;
 	}

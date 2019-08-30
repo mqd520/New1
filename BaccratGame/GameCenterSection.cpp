@@ -5,7 +5,7 @@
 #include "com/IniHelper.h"
 using namespace com;
 
-#define SectionName_GameCenter		("Table")			// GameCenter section name
+#define SectionName_GameCenter		("GameCenter")		// GameCenter section name
 #define SectionKeyName_IP			("ip")				// key name: ip
 #define SectionKeyName_Port			("port")			// key name: port
 

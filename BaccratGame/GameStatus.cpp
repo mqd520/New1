@@ -3,11 +3,16 @@
 
 #include "tc/TimerMoudleMgr.h"
 
+
 #define StepSize		(1000)			// countdown step size time
 
 
-GameStatus::GameStatus(EGameStatus status, int nTime /*= 0*/) :
+GameStatus::GameStatus(EGameStatus status, bool isAutoEnterNext /*= false*/, int nTime /*= 0*/) :
 status(status),
+nTime(nTime),
+bIsAutoEnterNext(isAutoEnterNext),
+bIsReady(false),
+
 pCountdown(nullptr)
 {
 	if (nTime > 0)
@@ -47,54 +52,68 @@ void GameStatus::ResetCountdown()
 	}
 }
 
-bool GameStatus::IsCountdownDone()
+void GameStatus::OnCountdownDone(CountDown* pCountDown, void* pObj)
 {
-	if (pCountdown)
+	for (vector<CountDownCplCallback>::iterator it = vecFns.begin(); it != vecFns.end(); it++)
 	{
-		return pCountdown->IsDone();
+		if (!(*it)._Empty())
+		{
+			(*it)(this, pCountDown->GetTotalTime());
+		}
 	}
-	
-	return false;
 }
 
-void GameStatus::OnCountdownDone(CountDown* p1, void* pObj)
-{
-	
-}
-
-EGameMainStatus GameStatus::GetCurGameMainStatus()
+EGameMainStatus GameStatus::GetCurGameMainStatus() const
 {
 	return EGameMainStatus::None;
 }
 
-EGameStatus GameStatus::GetCurGameStatus()
+EGameStatus GameStatus::GetCurGameStatus() const
 {
 	return status;
 }
 
-EGameStatus GameStatus::GetNextStatus()
+EGameStatus GameStatus::GetNextStatus() const
 {
 	return EGameStatus::None;
 }
 
-EGameStatus GameStatus::GetLastStatus()
+EGameStatus GameStatus::GetLastStatus() const
 {
 	return EGameStatus::None;
 }
 
 void GameStatus::Enter()
 {
-
+	bIsReady = false;
+	
+	StartCountdown();
 }
 
 void GameStatus::Leave()
 {
+	bIsReady = false;
 	StopCountdown();
 }
 
-bool GameStatus::IsCompleted()
+bool GameStatus::IsReady() const
 {
-	return true;
+	return bIsReady;
+}
+
+int GameStatus::GetTotalTime() const
+{
+	return nTime;
+}
+
+bool GameStatus::IsAutoEnter() const
+{
+	return bIsAutoEnterNext;
+}
+
+void GameStatus::SetReadyState()
+{
+	bIsReady = true;
 }
 
 void GameStatus::Exit()
@@ -104,4 +123,19 @@ void GameStatus::Exit()
 		delete pCountdown;
 		pCountdown = nullptr;
 	}
+}
+
+bool GameStatus::IsCountdownDone() const
+{
+	if (pCountdown)
+	{
+		return pCountdown->IsDone();
+	}
+
+	return true;
+}
+
+void GameStatus::RegCountdownCpl(CountDownCplCallback callback)
+{
+	vecFns.push_back(callback);
 }

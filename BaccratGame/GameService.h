@@ -7,6 +7,9 @@
 #include "GameProcess.h"
 
 
+class BaccratService;
+
+
 // Game Service
 class GameService
 {
@@ -15,11 +18,20 @@ public:
 
 private:
 	int nTableId;							// table Id
+	BaccratService* pBaccratSrv;			// BaccratService pointer
 	TableDataMgr tableDataMgr;				// table data mgr obj
 	DealerMgr dealerMgr;					// dealer mgr obj 
 	GameRoundService gameRoundSrv;			// GameRoundDataService obj
 	GameStatusMgr gameStatusMgr;			// game status mgr
 	GameProcess gamePro;					// game process
+
+private:
+	//************************************
+	// Method:    Load table data success evt handle
+	// Parameter: TableDataMgr * pTableDataMgr
+	// Parameter: TableData & table
+	//************************************
+	void OnLoadTableDataSuccess(TableDataMgr* pTableDataMgr, TableData& table);
 
 public:
 	//************************************
@@ -36,6 +48,8 @@ public:
 	// Method:    Get table Id
 	//************************************
 	int GetTableId();
+
+	void SendPck_2_GameCenter();
 
 	//************************************
 	// Method:    Get table data mgr obj

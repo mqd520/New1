@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "BaccratService.h"
+#include "Config.h"
 
 
 BaccratService* pInstance = NULL;	// the unique BaccratService instance
@@ -22,7 +23,9 @@ BaccratService* BaccratService::GetInstance()
 void BaccratService::Init()
 {
 	gameCenterSrv.Init();
+
 	gameSrvMgr.Init();
+	gameSrvMgr.CreateGameService(_cfg.table.vecTableIds);
 }
 
 void BaccratService::Exit()

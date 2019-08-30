@@ -10,7 +10,12 @@ using namespace db;
 #include "game/GameEvtReg.h"
 using namespace game;
 
+
 class GameService;
+
+
+// Apply new game round success evt callback
+using ApplyNewGameRoundSuccess = std::function < void(void) >;
 
 
 // Game round service
@@ -30,6 +35,12 @@ private:
 	bool bNeedChangeXue;		// whether need change xue
 
 private:
+	bool bApplyNewGameRoundSuccessed;		// apply new game round success
+
+private:
+	vector<ApplyNewGameRoundSuccess> vecFns_ApplyNewGameRound;	// apply new game round callback list
+
+private:
 	GameService* pGameSrv;				// game service obj
 	ApplyGameRoundSrv appGameRoundSrv;	// ApplyGameRoundSrv obj
 
@@ -45,7 +56,14 @@ private:
 	// Parameter: DbService * pSrv
 	// Parameter: DbResult * pResult
 	//************************************
-	void OnApplyGameRoundCpl(DbService* pSrv, DbResult* pResult);
+	void OnDbCpl_ApplyGameRound(DbService* pSrv, DbResult* pResult);
+
+	//************************************
+	// Method:    Game status changed evt handle
+	// Parameter: DbService * pSrv
+	// Parameter: DbResult * pResult
+	//************************************
+	void OnGameStatusChanged(EGameStatus previous, EGameStatus current);
 
 public:
 	//************************************
@@ -90,6 +108,11 @@ public:
 	int GetPu() const;
 
 	//************************************
+	// Method:    Is apply new game round successed
+	//************************************
+	bool IsApplyNewGameRoundSuccessed() const;
+
+	//************************************
 	// Method:    Apply new game round
 	//************************************
 	void ApplyNewRound();
@@ -98,4 +121,11 @@ public:
 	// Method:    Settle game round
 	//************************************
 	void SettleGameRound();
+
+public:
+	//************************************
+	// Method:    Reg apply new game round success evt
+	// Parameter: ApplyNewGameRoundSuccess callback
+	//************************************
+	void RegApplyNewGameRoundSuccess(ApplyNewGameRoundSuccess callback);
 };

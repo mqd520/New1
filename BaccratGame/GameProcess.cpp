@@ -11,32 +11,41 @@ GameProcess::GameProcess(int nTableId) :
 nTableId(nTableId),
 pGameSrv(nullptr)
 {
-	
+
 }
 
-void GameProcess::OnApplyGameRoundCpl(GameEvt* pEvt, void* pObj)
+void GameProcess::OnApplyGameRoundSuccess()
 {
-	ApplyGameRoundCplEvt* pEvt1 = (ApplyGameRoundCplEvt*)pEvt;
-	if (pEvt1->IsSuccessed())
-	{
-		pGameSrv->GetGameStatusMgr()->EnterNextStatus();
-	}
+	pGameSrv->GetGameStatusMgr()->GetCurGameStatusObj()->SetReadyState();
 }
 
-void GameProcess::Init()
+void GameProcess::OnGameStatusInited()
 {
-	pGameSrv->GetGameRoundSrv()->RegGameEvt(EGameEvtType::ApplyGameRoundCpl,
-		std::bind(&GameProcess::OnApplyGameRoundCpl, this, _1, _2));
+
 }
 
-void GameProcess::Exit()
+void GameProcess::OnGameStatusChanged(EGameStatus previous, EGameStatus current)
 {
+	// send table status changed pck
+	pGameSrv->SendPck_2_GameCenter();
 
+	Log::Printf(ELogType::Debug, "Table status changed, from %d to %d", (int)previous, (int)current);
 }
 
 void GameProcess::AttachGameService(GameService* pSrv)
 {
 	this->pGameSrv = pSrv;
+}
+
+void GameProcess::Init()
+{
+	pGameSrv->GetGameRoundSrv()->RegApplyNewGameRoundSuccess(std::bind(&GameProcess::OnApplyGameRoundSuccess, this));
+	pGameSrv->GetGameStatusMgr()->RegStatusInited(std::bind(&GameProcess::OnGameStatusInited, this));
+}
+
+void GameProcess::Exit()
+{
+
 }
 
 int GameProcess::GetTableId() const
@@ -46,6 +55,49 @@ int GameProcess::GetTableId() const
 
 void GameProcess::StartTable()
 {
-	pGameSrv->GetGameRoundSrv()->ApplyNewRound();
-	pGameSrv->GetGameStatusMgr()->ChangeStatus(EGameStatus::Prepare);
+	if (pGameSrv->GetGameStatusMgr()->GetCurGameStatus() == EGameStatus::Stop)
+	{
+		pGameSrv->GetGameStatusMgr()->ChangeStatus(EGameStatus::Prepare, true);
+		pGameSrv->GetGameRoundSrv()->ApplyNewRound();
+
+		Log::Printf(ELogType::Info, "Start table success, table: %s", pGameSrv->GetTableDataMgr()->GetTableData().strTableName.c_str());
+	}
+}
+
+void GameProcess::StartBet()
+{
+	bool b = false;
+	char chMsg[100] = { 0 };
+
+	pGameSrv->GetGameStatusMgr()->GetCurGameStatusObj()->SetReadyState();
+
+	if (pGameSrv->GetGameStatusMgr()->GetCurGameStatus() == EGameStatus::Prepare)
+	{
+		b = pGameSrv->GetGameStatusMgr()->EnterNextStatus();
+		if (b)
+		{
+
+		}
+		else
+		{
+			sprintf_s(chMsg, "not ready");
+		}
+	}
+	else
+	{
+		sprintf_s(chMsg, "not int \"prepare\" status, cur status: %d", (int)pGameSrv->GetGameStatusMgr()->GetCurGameStatus());
+	}
+
+	Log::Printf(b ? ELogType::Info : ELogType::Error, "Enter bet status %s, table: %s, msg: %s",
+		b ? "success" : "fail", pGameSrv->GetTableDataMgr()->GetTableData().strTableName.c_str(), chMsg);
+}
+
+void GameProcess::StopBet()
+{
+	if (pGameSrv->GetGameStatusMgr()->GetCurGameStatus() == EGameStatus::Bet)
+	{
+		pGameSrv->GetGameStatusMgr()->EnterNextStatus();
+
+		Log::Printf(ELogType::Debug, "Enter stop bet status");
+	}
 }

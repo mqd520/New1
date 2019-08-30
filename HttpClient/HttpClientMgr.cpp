@@ -48,13 +48,29 @@ namespace hc
 		vecHttpClients.clear();
 	}
 
-	HttpClient* HttpClientMgr::Get(string url)
+	HttpClient* HttpClientMgr::GetByUrl(string url)
 	{
 		HttpClient* phc = NULL;
 
 		for (vector<HttpClient*>::iterator it = vecHttpClients.begin(); it != vecHttpClients.end(); it++)
 		{
 			if ((*it)->GetUrl() == url)
+			{
+				phc = *it;
+				break;
+			}
+		}
+
+		return phc;
+	}
+
+	HttpClient* HttpClientMgr::Get(string guid)
+	{
+		HttpClient* phc = NULL;
+
+		for (vector<HttpClient*>::iterator it = vecHttpClients.begin(); it != vecHttpClients.end(); it++)
+		{
+			if ((*it)->GetGUID() == guid)
 			{
 				phc = *it;
 				break;

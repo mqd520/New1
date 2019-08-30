@@ -39,6 +39,12 @@ namespace hc
 		// Method:    Get a HttpClient obj
 		// Parameter: url
 		//************************************
-		HttpClient* Get(string url);
+		HttpClient* GetByUrl(string url);
+
+		//************************************
+		// Method:    Get a HttpClient obj
+		// Parameter: string guid
+		//************************************
+		HttpClient* Get(string guid);
 	};
 }

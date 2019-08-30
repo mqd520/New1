@@ -60,6 +60,16 @@ namespace com
 		return result;
 	}
 
+	void StringTool::Trim(string& str)
+	{
+		if (str.empty())
+		{
+			return;
+		}
+		str.erase(0, str.find_first_not_of(" "));
+		str.erase(str.find_last_not_of(" ") + 1);
+	}
+
 	string StringTool::UTF16_2_GB2312(wchar_t* pStr)
 	{
 		int len = WideCharToMultiByte(CP_ACP, 0, pStr, -1, NULL, 0, NULL, NULL);

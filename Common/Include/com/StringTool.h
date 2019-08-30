@@ -19,6 +19,8 @@ namespace com
 
 		static string ToUpper(string& str);
 
+		static void Trim(string& str);
+
 		static string UTF16_2_GB2312(wchar_t* pStr);
 
 		static string UTF16_2_UTF8(wchar_t* pStr);

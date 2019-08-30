@@ -29,14 +29,14 @@ namespace db
 		reader.parse(data.bufContent, root);
 		Json::Value bsData = root["data"];
 
-		pResult->nGameRoundId = bsData["gmid"].asInt();
+		pResult->nGameRoundId = bsData["GameRoundId"].asInt();
 		if (pResult->nGameRoundId > 0)
 		{
-			pResult->strGameRoundNo = IsUTF8(data) ? UTF8_2_GB2312(bsData["gmnumber"].asString()) : bsData["gmnumber"].asString();
-			pResult->nXue = bsData["xue"].asInt();
-			pResult->nPu = bsData["pu"].asInt();
-			pResult->nDuplicateId = bsData["DuplicateID"].asInt();
-			pResult->bIsNewXue = bsData["NX"].asBool();
+			pResult->strGameRoundNo = IsUTF8(data) ? UTF8_2_GB2312(bsData["GameRoundNo"].asString()) : bsData["GameRoundNo"].asString();
+			pResult->nXue = bsData["Xue"].asInt();
+			pResult->nPu = bsData["Pu"].asInt();
+			pResult->nDuplicateId = bsData["DuplicateId"].asInt();
+			pResult->bIsNewXue = bsData["IsNewXue"].asBool();
 		}
 
 		pResult->bSuccess = true;

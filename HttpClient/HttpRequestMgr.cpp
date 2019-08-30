@@ -51,7 +51,7 @@ namespace hc
 
 	void HttpRequestMgr::ProcessRequest(HttpRequestParaInfo& info)
 	{
-		HttpClient* phc = HttpClientApp::GetHttpClientMgr()->Get(info.url1);
+		HttpClient* phc = HttpClientApp::GetHttpClientMgr()->Get(info.guid);
 		if (phc)
 		{
 			CHttpClientA http;

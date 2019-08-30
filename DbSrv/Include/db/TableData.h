@@ -22,7 +22,7 @@ namespace db
 		int dk_seatMin;			// dk_seatMin
 		int dk_dtDelayBet;		// dk_dtDelayBet
 		int dk_publishresult;	// dk_publishresult
-		int dk_mode;			// dk_mode
+		int dk_mode;			// start new game round model, refer to ENewGameRoundModel
 		int dk_dtprepare;		// dk_dtprepare
 		int dk_dtstartbet;		// dk_dtstartbet
 		int dk_dtstopbet;		// dk_dtstopbet
@@ -44,15 +44,5 @@ namespace db
 
 	public:
 		TableData(){};
-
-		//TableData(const TableData& t)
-		//{
-		//	memcpy(this, &t, sizeof(TableData));
-		//	this->strTableName = t.strTableName;
-		//	this->dk_passport = t.dk_passport;
-		//	this->dk_password = t.dk_password;
-		//	this->DealerNo = t.DealerNo;
-		//	this->VisitPwd = t.VisitPwd;
-		//}
 	};
 }

@@ -27,5 +27,10 @@ namespace com
 		// Method:    获取当前可执行程序的目录
 		//************************************
 		static string GetCurrentDir();
+
+		//************************************
+		// Method:    Create a guid string
+		//************************************
+		static string CreateGuid();
 	};
 }

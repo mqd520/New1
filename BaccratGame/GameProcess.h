@@ -6,6 +6,7 @@ using namespace db;
 #include "game/GameEvt.h"
 using namespace game;
 
+
 class GameService;
 
 
@@ -20,17 +21,30 @@ private:
 	GameService* pGameSrv;		// game service obj
 
 private:
-	ApplyGameRoundSrv appGameRoundSrv;	// ApplyGameRoundSrv obj
+	//************************************
+	// Method:    Apply game round success evt
+	//************************************
+	void OnApplyGameRoundSuccess();
 
-private:
 	//************************************
-	// Method:    Apply game round cpl evt
-	// Parameter: pEvt: Game evt
-	// Parameter: pObj: attach obj
+	// Method:    Game status inited evt handle
 	//************************************
-	void OnApplyGameRoundCpl(GameEvt* pEvt, void* pObj);
+	void OnGameStatusInited();
+
+	//************************************
+	// Method:    Game status changed evt handle
+	// Parameter: EGameStatus previous
+	// Parameter: EGameStatus current
+	//************************************
+	void OnGameStatusChanged(EGameStatus previous, EGameStatus current);
 
 public:
+	//************************************
+	// Method:    Attach game service
+	// Parameter: GameService * pSrv
+	//************************************
+	void AttachGameService(GameService* pSrv);
+
 	//************************************
 	// Method:    Init
 	//************************************
@@ -42,12 +56,6 @@ public:
 	void Exit();
 
 	//************************************
-	// Method:    Attach game service
-	// Parameter: GameService * pSrv
-	//************************************
-	void AttachGameService(GameService* pSrv);
-
-	//************************************
 	// Method:    Get Table Id
 	//************************************
 	int GetTableId() const;
@@ -56,4 +64,14 @@ public:
 	// Method:    Start table
 	//************************************
 	void StartTable();
+
+	//************************************
+	// Method:    Start bet
+	//************************************
+	void StartBet();
+
+	//************************************
+	// Method:    Stop bet
+	//************************************
+	void StopBet();
 };

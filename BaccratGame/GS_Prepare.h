@@ -2,33 +2,26 @@
 
 #include "GameStatus.h"
 
+
+// Prepare status
 class GS_Prepare : public GameStatus
 {
 public:
 	//************************************
 	// Method:    Constructor
-	// Parameter: int nDurationTime:	duration time
+	// Parameter: bool isAutoEnterNext:	whether auto enter next status
+	// Parameter: int nDurationTime: total time
 	//************************************
-	GS_Prepare(int nDurationTime);
+	GS_Prepare(bool isAutoEnterNext, int nDurationTime);
 
 public:
 	//************************************
 	// Method:    Get current main status
 	//************************************
-	EGameMainStatus GetCurGameMainStatus() override;
+	EGameMainStatus GetCurGameMainStatus() const override;
 
 	//************************************
 	// Method:    Get next status
 	//************************************
-	EGameStatus GetNextStatus() override;
-
-	//************************************
-	// Method:    Enter
-	//************************************
-	void Enter() override;
-
-	//************************************
-	// Method:    Is completed
-	//************************************
-	bool IsCompleted() override;
+	EGameStatus GetNextStatus() const override;
 };

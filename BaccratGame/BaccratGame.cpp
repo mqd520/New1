@@ -5,7 +5,7 @@
 #include "InitService.h"
 #include "BaccratService.h"
 
-#define TableId		(65)		// Table Id
+#define TableId		(71)		// Table Id
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -42,9 +42,18 @@ int _tmain(int argc, _TCHAR* argv[])
 			GameService* pSrv = BaccratService::GetInstance()->GetGameSrvMgr()->GetGameSrv(TableId);
 			pSrv->GetGameProcess()->StartTable();
 		}
+		else if (cmd == "302")	// start bet
+		{
+			GameService* pSrv = BaccratService::GetInstance()->GetGameSrvMgr()->GetGameSrv(TableId);
+			pSrv->GetGameProcess()->StartBet();
+		}
+		else if (cmd == "303")	// stop bet
+		{
+			GameService* pSrv = BaccratService::GetInstance()->GetGameSrvMgr()->GetGameSrv(TableId);
+			pSrv->GetGameProcess()->StopBet();
+		}
 	}
 
 	InitService::OnMainExit();
 	return 0;
 }
-

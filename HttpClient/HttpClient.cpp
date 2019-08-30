@@ -5,12 +5,16 @@
 #include "Ryeol/RyeolHttpClient.h"
 using namespace Ryeol;
 
+#include "com/CommonTool.h"
+using namespace com;
+
+
 namespace hc
 {
 	HttpClient::HttpClient(string url /*= ""*/) :
 		url(url)
 	{
-
+		guid = CommonTool::CreateGuid();
 	}
 
 	HttpClient::~HttpClient()
@@ -29,6 +33,11 @@ namespace hc
 	void HttpClient::SetCallbackFn(HttpResponseCallback fun)
 	{
 		this->fn = fun;
+	}
+
+	string HttpClient::GetGUID()
+	{
+		return guid;
 	}
 
 	string HttpClient::GetUrl()
@@ -56,6 +65,7 @@ namespace hc
 		}
 
 		HttpRequestParaInfo info;
+		info.guid = guid;
 		info.url1 = url1;
 		info.url = url;
 		info.method = "GET";
@@ -91,6 +101,7 @@ namespace hc
 		}
 
 		HttpRequestParaInfo info;
+		info.guid = guid;
 		info.url1 = url1;
 		info.url = url;
 		info.method = "POST";

@@ -32,6 +32,7 @@ namespace hc
 	// http request parameter info
 	typedef struct tagHttpRequestParaInfo
 	{
+		string guid;	// guid
 		string method;	// http request method
 		string url;		// request url
 		string url1;	// request url(not include query string)
@@ -59,6 +60,7 @@ namespace hc
 
 	protected:
 		string url;			// url
+		string guid;		// guid
 		HttpResponseCallback fn;	// callback fn
 
 	protected:
@@ -72,6 +74,11 @@ namespace hc
 		void OnHttpResponse(HttpResponseData& data);
 
 	public:
+		//************************************
+		// Method:    Get guid
+		//************************************
+		string GetGUID();
+
 		//************************************
 		// Method:    Get url
 		//************************************

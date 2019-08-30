@@ -32,5 +32,5 @@ public:
 	//************************************
 	GameService* GetGameSrv(int nTableId);
 
-	void CreateGameService(vector<int>& vecTableIds);
+	void CreateGameService(vector<int> vecTableIds);
 };

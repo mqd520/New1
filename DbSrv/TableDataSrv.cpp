@@ -67,7 +67,7 @@ namespace db
 
 		pResult->data = tData;
 
-		pResult->bSuccess = true;
+		pResult->bSuccess = tData.nId > 0;
 
 		return pResult;
 	}

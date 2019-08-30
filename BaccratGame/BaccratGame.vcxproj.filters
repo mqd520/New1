@@ -105,6 +105,24 @@
     <ClInclude Include="DealerMgr.h">
       <Filter>03 Service\02 Game Service\01 Dealer Mgr</Filter>
     </ClInclude>
+    <ClInclude Include="TableSection.h">
+      <Filter>02 Config\00 Section</Filter>
+    </ClInclude>
+    <ClInclude Include="GS_Bet.h">
+      <Filter>03 Service\02 Game Service\03 Game Status\00 Sub Status</Filter>
+    </ClInclude>
+    <ClInclude Include="GS_StopBet.h">
+      <Filter>03 Service\02 Game Service\03 Game Status\00 Sub Status</Filter>
+    </ClInclude>
+    <ClInclude Include="GS_Publish.h">
+      <Filter>03 Service\02 Game Service\03 Game Status\00 Sub Status</Filter>
+    </ClInclude>
+    <ClInclude Include="GS_Settle.h">
+      <Filter>03 Service\02 Game Service\03 Game Status\00 Sub Status</Filter>
+    </ClInclude>
+    <ClInclude Include="GS_Send.h">
+      <Filter>03 Service\02 Game Service\03 Game Status\00 Sub Status</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -161,6 +179,24 @@
     </ClCompile>
     <ClCompile Include="DealerMgr.cpp">
       <Filter>03 Service\02 Game Service\01 Dealer Mgr</Filter>
+    </ClCompile>
+    <ClCompile Include="TableSection.cpp">
+      <Filter>02 Config\00 Section</Filter>
+    </ClCompile>
+    <ClCompile Include="GS_Bet.cpp">
+      <Filter>03 Service\02 Game Service\03 Game Status\00 Sub Status</Filter>
+    </ClCompile>
+    <ClCompile Include="GS_StopBet.cpp">
+      <Filter>03 Service\02 Game Service\03 Game Status\00 Sub Status</Filter>
+    </ClCompile>
+    <ClCompile Include="GS_Publish.cpp">
+      <Filter>03 Service\02 Game Service\03 Game Status\00 Sub Status</Filter>
+    </ClCompile>
+    <ClCompile Include="GS_Settle.cpp">
+      <Filter>03 Service\02 Game Service\03 Game Status\00 Sub Status</Filter>
+    </ClCompile>
+    <ClCompile Include="GS_Send.cpp">
+      <Filter>03 Service\02 Game Service\03 Game Status\00 Sub Status</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
