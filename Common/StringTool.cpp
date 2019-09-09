@@ -129,4 +129,45 @@ namespace com
 		wstring wStr = UTF8_2_UTF16(pStr);
 		return UTF16_2_GB2312((wchar_t*)wStr.c_str());
 	}
+
+	void StringTool::GetGB2312StrLen(char* pStr, int* charLen /*= nullptr*/, int* byteLen /*= nullptr*/)
+	{
+		if (charLen)
+		{
+			wstring utf16Str = GB2312_2_UTF16(pStr);
+			GetUTF16StrLen((wchar_t*)utf16Str.c_str(), charLen, nullptr);
+		}
+
+		if (byteLen)
+		{
+			*byteLen = strlen(pStr);
+		}
+	}
+
+	void StringTool::GetUTF16StrLen(wchar_t* pStr, int* charLen /*= nullptr*/, int* byteLen /*= nullptr*/)
+	{
+		if (charLen)
+		{
+			*charLen = wcslen(pStr);
+		}
+
+		if (byteLen)
+		{
+			*byteLen = wcslen(pStr) * 2;
+		}
+	}
+
+	void StringTool::GetUTF8StrLen(char* pStr, int* charLen /*= nullptr*/, int* byteLen /*= nullptr*/)
+	{
+		if (charLen)
+		{
+			wstring utf16Str = UTF8_2_UTF16(pStr);
+			GetUTF16StrLen((wchar_t*)utf16Str.c_str(), charLen, nullptr);
+		}
+
+		if (byteLen)
+		{
+			*byteLen = strlen(pStr);
+		}
+	}
 }

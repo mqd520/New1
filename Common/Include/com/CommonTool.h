@@ -15,13 +15,13 @@ namespace com
 		// Method:    ip 点分制转换成int
 		// Parameter: string ip
 		//************************************
-		static int ConvertIP(string ip);
+		//static int ConvertIP(string ip);
 
 		//************************************
 		// Method:    ip int 转换成 点分制
 		// Parameter: int ip
 		//************************************
-		static string ConvertIP(int ip);
+		//static string ConvertIP(int ip);
 
 		//************************************
 		// Method:    获取当前可执行程序的目录

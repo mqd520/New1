@@ -1,93 +1,129 @@
 #pragma once
 
+#include <vector>
 #include <minwindef.h>
+#include <minwindef.h>
+#include <functional>
+using namespace std;
+using namespace std::placeholders;
+
 
 namespace com
 {
-	/************************************************************************/
-	/* 内存流类                                                           */
-	/************************************************************************/
+
+	class MemoryStream;
+
+
+	// over max buf length
+	// MemoryStream*:	MemoryStream pointer 
+	// int:				max buf length
+	using MSOverMaxBufLenCallback = std::function < void(MemoryStream*, int) > ;
+
+
+	// MemoryStream
 	class MemoryStream
 	{
 	public:
 		//************************************
-		// Method:    构造函数
-		// Parameter: int len:	缓冲区默认大小
+		// Method:    Constructor
+		// Parameter: int len
 		//************************************
-		MemoryStream(int len = 4096);
+		MemoryStream(int len = 4096, int max = 1024 * 1024);
 
 		~MemoryStream();
 
 	protected:
-		BYTE* pBuf;				// 缓冲区指针
-		int nBufLen;			// 字节流长度
-		int nDataStartIndex;	// 数据段开始索引
-		int nDataEndIndex;		// 数据段结束索引
+		BYTE* pBuf;				// buf
+		int nBufLen;			// buf length
+		int nMaxLen;			// max buf length
+		int nDataStartIndex;	// data buf start index
+		int nDataEndIndex;		// data buf end index
+		vector<MSOverMaxBufLenCallback> vecFns;
 
 	protected:
 		//************************************
-		// Method:    重新分配缓冲区
-		// Parameter: int len:	总长大小
+		// Method:    Reassign buf
+		// Parameter: int len
 		//************************************
-		void ReAssignBuf(int len);
+		bool ReAssignBuf(int len);
 
 		//************************************
-		// Method:    向左平移
-		// Parameter: int len:	平移长度
+		// Method:    PanLeft
+		// Rerurns:	  actual pan length
+		// Parameter: int index
+		// Parameter: int len
+		// Parameter: int panLen
 		//************************************
-		void LeftPan(int index, int len, int size);
+		int PanLeft(int index, int len, int panLen);
+
+		//************************************
+		// Method:    Data PanLeft
+		// Parameter: int len
+		//************************************
+		void DataPanLeft(int len);
 
 	public:
 		//************************************
-		// Method:    获取流缓冲区
+		// Method:    Get max buf length
 		//************************************
-		BYTE* GetBuf();
+		int GetMaxLen() const;
 
 		//************************************
-		// Method:    获取当前缓冲区总长度
+		// Method:    Get buf
 		//************************************
-		int GetTotalLen();
+		BYTE* GetBuf() const;
 
 		//************************************
-		// Method:    获取可读缓冲区长度
+		// Method:    Get total length
+		//************************************
+		int GetTotalLen() const;
+
+		//************************************
+		// Method:    Get readable buf length
 		//************************************
 		int AvaliableReadLen();
 
 		//************************************
-		// Method:    获取可写缓冲区长度
+		// Method:    Get writable buf length
 		//************************************
 		int AvaliableWriteLen();
 
 		//************************************
-		// Method:    从流中复制一段缓冲区
-		// Parameter: BYTE buf[]:	缓冲区		
-		// Parameter: int len:		缓冲区长度
+		// Method:    Get writable right buf length
 		//************************************
-		bool Copy(BYTE buf[], int len);
+		int AvaliableRightWriteLen();
 
 		//************************************
-		// Method:    从流中读取一段缓冲区
-		// Parameter: BYTE buf[]:	缓冲区		
-		// Parameter: int len:		缓冲区长度
+		// Method:    Copy buf to dest buf
+		// Returns:   actual copy length 
+		// Parameter: int len
+		// Parameter: BYTE * buf
 		//************************************
-		bool Read(BYTE buf[], int len);
+		int Copy(int len, BYTE* buf = nullptr);
 
 		//************************************
-		// Method:    从流中读取一段缓冲区
-		// Parameter: int len:		缓冲区长度
+		// Method:    Read buf
+		// Parameter: int len
+		// Parameter: BYTE * buf
 		//************************************
-		bool Read(int len);
+		int Read(int len, BYTE* buf = nullptr);
 		
 		//************************************
-		// Method:    向流中写入一段缓冲区
-		// Parameter: BYTE buf[]:	缓冲区		
-		// Parameter: int len:		缓冲区长度
+		// Method:    Write
+		// Parameter: BYTE * buf
+		// Parameter: int len
 		//************************************
-		void Write(BYTE buf[], int len);
+		bool Write(BYTE* buf, int len);
 
 		//************************************
-		// Method:    清空流
+		// Method:    Clear
 		//************************************
 		void Clear();
+
+		//************************************
+		// Method:    Reg Callback
+		// Parameter: MSOverMaxBufLenCallback callback
+		//************************************
+		void RegCallback(MSOverMaxBufLenCallback callback);
 	};
 }

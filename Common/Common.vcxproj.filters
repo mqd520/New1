@@ -25,8 +25,17 @@
     <Filter Include="06 Encryption">
       <UniqueIdentifier>{e861ca5d-29a9-4121-9272-a86afbccd6b7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="07 Stream">
+    <Filter Include="08 Thread">
+      <UniqueIdentifier>{9cc7aed0-e454-428e-93b6-f4a0a34f6d26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="07 Buffer">
+      <UniqueIdentifier>{3058ce1e-eb3c-4241-bc3a-2452163bf038}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="08 Stream">
       <UniqueIdentifier>{d355fc40-8c88-4771-9cab-a2f5d4100142}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="09 Timer">
+      <UniqueIdentifier>{9a504951-d670-4588-8668-eec432006f04}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -64,7 +73,46 @@
       <Filter>06 Encryption</Filter>
     </ClInclude>
     <ClInclude Include="Include\com\MemoryStream.h">
-      <Filter>07 Stream</Filter>
+      <Filter>08 Stream</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\com\ByteStream.h">
+      <Filter>08 Stream</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\com\Thread.h">
+      <Filter>08 Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\com\StreamTool.h">
+      <Filter>08 Stream</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\com\NetworkStream.h">
+      <Filter>08 Stream</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\com\NetworkStreamRead.h">
+      <Filter>08 Stream</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\com\NetworkStreamWrite.h">
+      <Filter>08 Stream</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\com\BufferTool.h">
+      <Filter>07 Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\com\Timer.h">
+      <Filter>09 Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="TimerMgr.h">
+      <Filter>09 Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="TimerThread1.h">
+      <Filter>09 Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="TimerThread2.h">
+      <Filter>09 Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="TimerGenerate.h">
+      <Filter>09 Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\com\Lock.h">
+      <Filter>08 Thread</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -99,7 +147,46 @@
       <Filter>06 Encryption</Filter>
     </ClCompile>
     <ClCompile Include="MemoryStream.cpp">
-      <Filter>07 Stream</Filter>
+      <Filter>08 Stream</Filter>
+    </ClCompile>
+    <ClCompile Include="ByteStream.cpp">
+      <Filter>08 Stream</Filter>
+    </ClCompile>
+    <ClCompile Include="Thread.cpp">
+      <Filter>08 Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="StreamTool.cpp">
+      <Filter>08 Stream</Filter>
+    </ClCompile>
+    <ClCompile Include="NetworkStream.cpp">
+      <Filter>08 Stream</Filter>
+    </ClCompile>
+    <ClCompile Include="NetworkStreamRead.cpp">
+      <Filter>08 Stream</Filter>
+    </ClCompile>
+    <ClCompile Include="NetworkStreamWrite.cpp">
+      <Filter>08 Stream</Filter>
+    </ClCompile>
+    <ClCompile Include="BufferTool.cpp">
+      <Filter>07 Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>09 Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="TimerMgr.cpp">
+      <Filter>09 Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="TimerThread1.cpp">
+      <Filter>09 Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="TimerThread2.cpp">
+      <Filter>09 Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="TimerGenerate.cpp">
+      <Filter>09 Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="Lock.cpp">
+      <Filter>08 Thread</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

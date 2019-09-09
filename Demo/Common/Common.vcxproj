@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{F2F8B97E-1815-472E-B907-9EB24E1F3C66}</ProjectGuid>
+    <ProjectGuid>{FBBE8C20-394C-485D-B840-2B7F54744833}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Demo</RootNamespace>
+    <RootNamespace>Common</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -56,13 +56,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../Lib/tc/Include/;../Lib/log/Include/;../Lib/json/Include/;../Lib/Ryeol/Include/;../Common/Include/;../PacketSrv/Include/;../HttpClient/Include/;../DbSrv/Include/;../WebSocket/Include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../Common/Include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>../Lib/json/;../Lib/log/;../Lib/Ryeol/;../Lib/tc/;../Common/$(OutDir)/;../HttpClient/$(OutDir)/;../PacketSrv/$(OutDir)/;../DbSrv/$(OutDir)/;../WebSocket/$(OutDir)/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>TcpCommucation_d.lib;Log_d.lib;JsonCPP_d.lib;Common.lib;HttpClient.lib;PacketSrv.lib;DbSrv.lib;WebSocket.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../Common/$(OutDir)/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Common.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -74,39 +74,50 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../Lib/tc/Include/;../Lib/log/Include/;../Lib/json/Include/;../Lib/Ryeol/Include/;../Common/Include/;../PacketSrv/Include/;../HttpClient/Include/;../DbSrv/Include/;../WebSocket/Include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../Common/Include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>../Lib/json/;../Lib/log/;../Lib/Ryeol/;../Lib/tc/;../Common/$(OutDir)/;../HttpClient/$(OutDir)/;../PacketSrv/$(OutDir)/;../DbSrv/$(OutDir)/;../WebSocket/$(OutDir)/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>TcpCommucation.lib;Log.lib;JsonCPP.lib;Common.lib;HttpClient.lib;PacketSrv.lib;DbSrv.lib;WebSocket.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../Common/$(OutDir)/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Common.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DbSrvDemo.h" />
-    <ClInclude Include="HttpClientDemo.h" />
-    <ClInclude Include="Log.h" />
+    <ClInclude Include="ByteStreamDemo.h" />
+    <ClInclude Include="MemoryStreamDemo.h" />
+    <ClInclude Include="NetworkStreamDemo.h" />
+    <ClInclude Include="NetworkStreamReadDemo.h" />
+    <ClInclude Include="NetworkStreamWriteDemo.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StreamToolDemo.h" />
+    <ClInclude Include="StringDemo.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="WebSocket.h" />
-    <ClInclude Include="WebSocketServer.h" />
+    <ClInclude Include="Thread1.h" />
+    <ClInclude Include="ThreadDemo.h" />
+    <ClInclude Include="TimerDemo.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Demo.cpp" />
-    <ClCompile Include="HttpClientDemo.cpp" />
-    <ClCompile Include="Log.cpp" />
+    <ClCompile Include="ByteStreamDemo.cpp" />
+    <ClCompile Include="Common.cpp" />
+    <ClCompile Include="MemoryStreamDemo.cpp" />
+    <ClCompile Include="NetworkStreamDemo.cpp" />
+    <ClCompile Include="NetworkStreamReadDemo.cpp" />
+    <ClCompile Include="NetworkStreamWriteDemo.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="WebSocket.cpp" />
-    <ClCompile Include="WebSocketServer.cpp" />
+    <ClCompile Include="StreamToolDemo.cpp" />
+    <ClCompile Include="StringDemo.cpp" />
+    <ClCompile Include="Thread1.cpp" />
+    <ClCompile Include="ThreadDemo.cpp" />
+    <ClCompile Include="TimerDemo.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -83,32 +83,58 @@
   <ItemGroup>
     <ClInclude Include="Include\Common\ExceptionHandler.h" />
     <ClInclude Include="Include\com\Base64.h" />
+    <ClInclude Include="Include\com\BufferTool.h" />
+    <ClInclude Include="Include\com\ByteStream.h" />
     <ClInclude Include="Include\com\CommonTool.h" />
     <ClInclude Include="Include\com\HttpRequest.h" />
     <ClInclude Include="Include\com\HttpResponse.h" />
     <ClInclude Include="Include\com\IniHelper.h" />
+    <ClInclude Include="Include\com\Lock.h" />
     <ClInclude Include="Include\com\MemoryStream.h" />
+    <ClInclude Include="Include\com\NetworkStream.h" />
+    <ClInclude Include="Include\com\NetworkStreamRead.h" />
+    <ClInclude Include="Include\com\NetworkStreamWrite.h" />
     <ClInclude Include="Include\com\sha1.h" />
     <ClInclude Include="Include\com\ShellService.h" />
+    <ClInclude Include="Include\com\StreamTool.h" />
     <ClInclude Include="Include\com\StringTool.h" />
+    <ClInclude Include="Include\com\Thread.h" />
+    <ClInclude Include="Include\com\Timer.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TimerGenerate.h" />
+    <ClInclude Include="TimerMgr.h" />
+    <ClInclude Include="TimerThread1.h" />
+    <ClInclude Include="TimerThread2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Base64.cpp" />
+    <ClCompile Include="BufferTool.cpp" />
+    <ClCompile Include="ByteStream.cpp" />
     <ClCompile Include="CommonTool.cpp" />
     <ClCompile Include="ExceptionHandler.cpp" />
     <ClCompile Include="HttpRequest.cpp" />
     <ClCompile Include="HttpResponse.cpp" />
     <ClCompile Include="IniHelper.cpp" />
+    <ClCompile Include="Lock.cpp" />
     <ClCompile Include="MemoryStream.cpp" />
+    <ClCompile Include="NetworkStream.cpp" />
+    <ClCompile Include="NetworkStreamRead.cpp" />
+    <ClCompile Include="NetworkStreamWrite.cpp" />
     <ClCompile Include="sha1.cpp" />
     <ClCompile Include="ShellService.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="StreamTool.cpp" />
     <ClCompile Include="StringTool.cpp" />
+    <ClCompile Include="Thread.cpp" />
+    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="TimerGenerate.cpp" />
+    <ClCompile Include="TimerMgr.cpp" />
+    <ClCompile Include="TimerThread1.cpp" />
+    <ClCompile Include="TimerThread2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

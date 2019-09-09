@@ -9,23 +9,23 @@ namespace com
 	CommonTool::CommonTool()
 		= default;
 
-	int CommonTool::ConvertIP(string ip)
-	{
-		return inet_addr(ip.c_str());
-	}
+	//int CommonTool::ConvertIP(string ip)
+	//{
+	//	return inet_addr(ip.c_str());
+	//}
 
-	string CommonTool::ConvertIP(int ip)
-	{
-		char buffer[50] = { 0 };
+	//string CommonTool::ConvertIP(int ip)
+	//{
+	//	char buffer[50] = { 0 };
 
-		BYTE* pucIP = (BYTE*)&ip;
-		sprintf_s(buffer, 50, "%u.%u.%u.%u",
-			pucIP[0], pucIP[1], pucIP[2], pucIP[3]);
+	//	BYTE* pucIP = (BYTE*)&ip;
+	//	sprintf_s(buffer, 50, "%u.%u.%u.%u",
+	//		pucIP[0], pucIP[1], pucIP[2], pucIP[3]);
 
-		string str = buffer;
+	//	string str = buffer;
 
-		return str;
-	}
+	//	return str;
+	//}
 
 	string CommonTool::GetCurrentDir()
 	{
